@@ -1,0 +1,30 @@
+.icon {
+  transform: translateY(-5px);
+  color: var(--color-text-primary);
+}
+
+.form {
+  height: 100%;
+  background: var(--color-dark);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  input {
+    background: var(--color-bg);
+  }
+
+  svg {
+    fill: var(--color-text-primary);
+  }
+}
+
+.btn {
+  margin-top: auto;
+}
+
+.label {
+  color: var(--color-text-primary);
+}

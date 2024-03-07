@@ -1,0 +1,25 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 15px;
+}
+
+.rowItem {
+  width: 100%;
+
+  h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}

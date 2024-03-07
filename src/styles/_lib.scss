@@ -1,0 +1,102 @@
+body .css-ptkaw2-MuiDataGrid-root {
+  color: var(--color-text-primary);
+  background: var(--color-dark);
+  border: none;
+  border-radius: 12px;
+
+  .MuiDataGrid-columnHeader:focus-within,
+  .MuiDataGrid-cell:focus-within {
+    outline: none;
+  }
+
+  .MuiDataGrid-withBorderColor {
+    border: none;
+  }
+
+  .css-yrdy0g-MuiDataGrid-columnHeaderRow {
+    color: var(--color-text-secondary);
+  }
+
+  .css-rtrcn9-MuiTablePagination-root {
+    color: var(--color-text-primary);
+  }
+
+  svg {
+    fill: var(--color-text-secondary);
+  }
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  color: var(--color-text-primary) !important;
+
+  svg {
+    fill: var(--color-text-primary);
+  }
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  border: 1px solid var(--color-dark) !important;
+}
+
+.css-1k4oq0i-MuiPaper-root-MuiPickersPopper-paper,
+.css-71vzt-MuiPaper-root-MuiPickersPopper-paper {
+  background: var(--color-bg) !important;
+  color: var(--color-text-primary) !important;
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 2px solid var(--color-bg);
+    background: var(--color-dark);
+    border-radius: 10px;
+  }
+
+  svg {
+    color: var(--color-text-primary) !important;
+  }
+
+  span {
+    color: var(--color-text-primary) !important;
+  }
+
+  button {
+    color: var(--color-text-primary) !important;
+  }
+}
+
+.css-jgls56-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+  border: 1px solid var(--color-dark) var(--color-primary);
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-bg) !important;
+}
+
+.MuiFilledInput-root {
+  border-bottom: 1px solid var(--color-bg) !important;
+}
+
+.MuiInput-root {
+  border-bottom: 1px solid var(--color-bg) !important;
+}
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  background: var(--color-bg) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  background: var(--color-bg);
+  color: var(--color-text-primary) !important;
+}
+
+.css-38raov-MuiButtonBase-root-MuiChip-root {
+  background: var(--color-bg) !important;
+  color: var(--color-text-primary) !important;
+}

@@ -1,0 +1,29 @@
+.btn {
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+  padding: 15px 25px;
+  border-radius: 5px;
+
+  &:hover:enabled {
+    box-shadow: 0 0 1px var(--color-primary), 0 0 2px var(--color-primary),
+      0 0 2px var(--color-primary), 0 0 4px var(--color-primary);
+  }
+
+  &:active {
+    opacity: 0.8;
+    transition: 100ms;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.sm {
+  padding: 10px 20px;
+}
+
+.lg {
+  padding: 20px 30px;
+}

@@ -1,0 +1,54 @@
+@import '_display';
+@import '_reset';
+@import '_variables';
+@import 'lib';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../public/fonts/Roboto-Regular.ttf');
+  font-weight: 400;
+  font-display: swap;
+}
+
+body {
+  background: var(--color-dark);
+  font-family: 'Roboto';
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid var(--color-bg);
+    background: var(--color-dark);
+    border-radius: 10px;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  column-gap: 20px;
+}
+
+section {
+  background: var(--color-bg);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+}
