@@ -26,7 +26,7 @@ const LoginForm = () => {
       <Input type="text" value={phone} onChange={setPhone} label="Phone" />
       <Input type="password" value={password} onChange={setPassword} label="Password" />
       <p className={classes.error}>{isInvalid && 'Invalid name or phone'}</p>
-      <Button type="submit" disabled={password.length < 8 || phone.length < 8} value="Submit" />
+      <Button type="submit" value="Submit" />
     </form>
   );
 };
