@@ -1,36 +1,36 @@
-import { useState, useEffect, type FC, type FormEvent } from 'react';
-import classes from './newGame.module.scss';
+import { useState, useEffect, type FC, type FormEvent } from "react";
+import classes from "./newGame.module.scss";
 
-import { IoIosArrowRoundBack } from 'react-icons/io';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-import Input from '../../../../UI/Input/Input';
-import Button from '../../../../UI/Button/Button';
+import Input from "../../../../UI/Input/Input";
+import Button from "../../../../UI/Button/Button";
 
-import { DateTimePicker } from '@mui/x-date-pickers';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { MenuItem, Select } from '@mui/material';
-import dayjs, { type Dayjs } from 'dayjs';
+import { DateTimePicker } from "@mui/x-date-pickers";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { MenuItem, Select } from "@mui/material";
+import dayjs, { type Dayjs } from "dayjs";
 
-import useSWR from 'swr';
-import axios from '../../../../axios/axios';
+import useSWR from "swr";
+import axios from "../../../../axios/axios";
 
-import Spinner from '../../../../UI/Spinner/Spinner';
-import { type IStadion } from '../../../../types/Stadion';
-import { type IGame } from '../../../../types/Game';
+import Spinner from "../../../../UI/Spinner/Spinner";
+import { type IStadion } from "../../../../types/Stadion";
+import { type IGame } from "../../../../types/Game";
 
-import PlayersInfo from './PlayersInfo/PlayersInfo';
-import { IUser } from '../../../../types/User';
+import PlayersInfo from "./PlayersInfo/PlayersInfo";
+import { IUser } from "../../../../types/User";
 
 const fetcher = (url: string) => axios.get(url).then(({ data }) => data);
 
 const NewGame: FC = () => {
-  const { data: stadions } = useSWR<IStadion[]>('/stadion/getAll', fetcher);
+  const { data: stadions } = useSWR<IStadion[]>("/stadion/getAll", fetcher);
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const [selectedStaion, setSelectedStaion] = useState<string>('');
+  const [selectedStaion, setSelectedStaion] = useState<string>("");
   const [maxPlayersCount, setMaxPlayersCount] = useState<number>(22);
   const [price, setPrice] = useState<number>(3000);
   const [startTime, setStartTime] = useState<Date | null | Dayjs>(null);
@@ -45,7 +45,7 @@ const NewGame: FC = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get<IGame>('/game/getOne/' + id).then(({ data }) => {
+      axios.get<IGame>("/game/getOne/" + id).then(({ data }) => {
         setMaxPlayersCount(data.maxPlayersCount);
         setStartTime(dayjs(data.startTime));
         setEndTime(dayjs(data.endTime));
@@ -63,7 +63,7 @@ const NewGame: FC = () => {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const stadionId = stadions?.find(
-      (stadion: IStadion) => stadion.title_en === selectedStaion,
+      (stadion: IStadion) => stadion.title_en === selectedStaion
     )?.id;
     const data = {
       startTime,
@@ -73,20 +73,20 @@ const NewGame: FC = () => {
       price,
     };
     if (!id) {
-      await axios.post('/game/create', data);
+      await axios.post("/game/create", data);
     } else {
-      await axios.patch('/game/update/' + id, data);
+      await axios.patch("/game/update/" + id, data);
     }
-    navigate('/dashboard/games');
+    navigate("/dashboard/games");
   };
 
   return (
     <div className="h-max">
       <div className="flex c-gap-10 mb-15">
-        <Link to={'/dashboard/games'}>
+        <Link to={"/dashboard/games"}>
           <IoIosArrowRoundBack size={45} className={classes.icon} />
         </Link>
-        <h2 className="title">{id ? 'Edit Game' : 'New Game'}</h2>
+        <h2 className="title">{id ? "Edit Game" : "New Game"}</h2>
       </div>
       <div className="h-max pb-65">
         <form className={classes.form} onSubmit={onSubmit}>
@@ -128,7 +128,8 @@ const NewGame: FC = () => {
               value={selectedStaion}
               displayEmpty
               onChange={(e) => setSelectedStaion(e.target.value)}
-              inputProps={{ 'aria-label': 'Without label' }}>
+              inputProps={{ "aria-label": "Without label" }}
+            >
               {stadions.map((stadion, index: number) => (
                 <MenuItem key={index} value={stadion.title_en}>
                   {stadion.title_en}
@@ -136,11 +137,16 @@ const NewGame: FC = () => {
               ))}
             </Select>
           )}
-          {id && <PlayersInfo players={players} group={1} />}
           <Button
-            disabled={!startTime || !endTime || !maxPlayersCount || !selectedStaion || !price}
+            disabled={
+              !startTime ||
+              !endTime ||
+              !maxPlayersCount ||
+              !selectedStaion ||
+              !price
+            }
             className={classes.btn}
-            value={id ? 'Edit' : 'Create'}
+            value={id ? "Edit" : "Create"}
             type="submit"
           />
         </form>

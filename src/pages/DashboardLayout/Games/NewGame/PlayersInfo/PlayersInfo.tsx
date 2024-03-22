@@ -11,17 +11,17 @@ interface IPlayersInfoProps {
 }
 
 const PlayersInfo: FC<IPlayersInfoProps> = ({ players }) => {
-  const playersFirstGroup = useMemo(() => {
-    return players.filter(({ UserGame }) => UserGame.team === 1);
-  }, [players]);
+//   const playersFirstGroup = useMemo(() => {
+//     return players.filter(({ UserGame }) => UserGame.team === 1);
+//   }, [players]);
 
-  const playersSecondGroup = useMemo(() => {
-    return players.filter(({ UserGame }) => UserGame.team === 2);
-  }, [players]);
+//   const playersSecondGroup = useMemo(() => {
+//     return players.filter(({ UserGame }) => UserGame.team === 2);
+//   }, [players]);
 
   return (
     <div className="pt-15">
-      <div className={classes.row}>
+      {/* <div className={classes.row}>
         {[1, 2].map((index) => {
           return (
             <div className={classes.rowItem} key={index}>
@@ -29,18 +29,7 @@ const PlayersInfo: FC<IPlayersInfoProps> = ({ players }) => {
             </div>
           );
         })}
-      </div>
-      <div className={classes.row}>
-        {[1, 2].map((index) => {
-          return (
-            <div className={classes.rowItem} key={index}>
-              <Suspense fallback={<Spinner />}>
-                <PlayersList players={index === 1 ? playersFirstGroup : playersSecondGroup} />
-              </Suspense>
-            </div>
-          );
-        })}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,0 +1,54 @@
+.overlay{
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    left:0;
+    height: 100%;
+    background-color: rgba(17, 22, 19, 0.88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal{
+    background-color: rgba(47, 65, 49, 1);
+    opacity: 1;
+    width: 70%;
+    height: auto;
+    position: absolute;
+    border-radius: 14px;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap:20px
+}
+
+
+.container{
+    display: flex;
+    gap:20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.players{
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    color: rgba(190, 193, 190, 1);
+}
+
+.playersBlock{
+    width: 100%;
+    background-color: rgba(32, 44, 34, 1);
+    border-radius: 15px;
+    padding: 20px;
+    line-height: 2;
+}
+
+.inputs{
+    background-color: rgba(32, 44, 34, 1);
+}

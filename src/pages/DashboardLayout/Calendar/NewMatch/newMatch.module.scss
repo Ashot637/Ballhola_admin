@@ -1,0 +1,50 @@
+.overlay{
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    left:0;
+    height: 100%;
+    background-color: rgba(17, 22, 19, 0.88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal{
+    background-color: rgba(17, 22, 19, 1);
+    width: 35%;
+    opacity: 1;
+    height: auto;
+    position: absolute;
+    border-radius: 14px;
+    border:2px solid #4CBB17;
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap:20px
+}
+
+.inputs{
+    background-color: rgba(32, 44, 34, 1);
+}
+
+.container{
+    display: flex;
+    gap:20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.confirm{
+    width: 11vw;
+    background-color: rgba(0, 128, 0, 1);
+}
+
+.cancel{
+    width: 11vw;
+}

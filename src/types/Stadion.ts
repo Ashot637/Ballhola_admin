@@ -10,4 +10,6 @@ export interface IStadion {
   address_am: string;
   facilities: IFacilitie[];
   img: string;
+  // password: string;
+  // phone_number: string;
 }

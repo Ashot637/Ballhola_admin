@@ -36,6 +36,7 @@ const Games = () => {
   };
 
   const renderEditCell = (params: GridRenderCellParams) => {
+    console.log(params.id)
     return (
       <div className="flex jst-end cp">
         <MdEdit

@@ -3,7 +3,7 @@ import classes from './sidebar.module.scss';
 
 import MenuItem, { type IMenuItem } from './MenuItem/MenuItem';
 
-import { MdSpaceDashboard } from 'react-icons/md';
+import { MdSpaceDashboard, MdCalendarMonth } from 'react-icons/md';
 import { GiSoccerBall, GiSoccerField } from 'react-icons/gi';
 import { CiLogout, CiUser } from 'react-icons/ci';
 
@@ -13,6 +13,11 @@ const MENU: IMenuItem[] = [
     link: '/dashboard',
     Icon: MdSpaceDashboard,
   },
+  // {
+  //   tilte: 'Calendar',
+  //   link: '/dashboard/calendar',
+  //   Icon: MdCalendarMonth,
+  // },
   {
     tilte: 'Games',
     link: '/dashboard/games',

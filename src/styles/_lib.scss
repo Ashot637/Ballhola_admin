@@ -100,3 +100,190 @@ body .css-ptkaw2-MuiDataGrid-root {
   background: var(--color-bg) !important;
   color: var(--color-text-primary) !important;
 }
+
+
+#day .fc .fc-timegrid-slot-minor,
+#day .fc .fc-timegrid-slot,
+#day .fc .fc-timegrid-now-indicator-container{
+  background-color: rgba(47, 65, 49, 1) !important;
+}
+
+#day.fc{
+  background-color: rgba(47, 65, 49, 1) !important;
+}
+
+#day .fc .fc-daygrid-body-natural, #day .fc-daygrid-day-events,
+#day .fc .fc-daygrid-day-frame, #day .fc .fc-daygrid-day.fc-day-today,
+#day .fc .fc-timegrid-axis-frame,
+#day .fc .fc-col-header-cell-cushion{
+    display: none !important;
+  }
+
+
+#day .fc .fc-timegrid-slot-minor, #day .fc .fc-timegrid-slot{
+  height: 20px!important;
+}
+
+#day .fc .fc-timegrid-slot-label-cushion{
+  width: 100px;
+  text-transform: uppercase;
+  font-weight: 300 !important;
+  color: rgba(165, 203, 195, 1);
+  position: relative;
+  top: 10px!important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 20px !important;
+  background-color: rgba(47, 65, 49, 1) !important;
+}
+
+#day .fc-theme-standard .fc-scrollgrid{
+  border:none !important
+}
+
+#day .fc .fc-timegrid-divider{
+  padding: 0 !important;
+}
+
+#day .fc .fc-cell-shaded, #day .fc .fc-day-disabled{
+  background-color: transparent !important;
+}
+
+
+#day .fc-theme-standard td,#day .fc-theme-standard th{
+  border:none !important
+}
+
+#day .fc-timegrid-event .fc-event-time{
+  display: none !important;
+}
+
+#day .fc-timegrid-event .fc-event-main {
+  border:none !important
+}
+
+
+#day .fc-v-event{
+  margin-left: 30px!important;
+  padding: 10px;
+  border: none !important;
+  border-radius: 7px !important;
+  border-left: 7px solid saddlebrown !important;
+  border-top-left-radius: 5px!important;
+  border-bottom-left-radius: 5px!important;
+  box-shadow: none !important;
+  position: absolute !important;
+}
+
+#day .fc{
+  padding: 0px !important;
+}
+
+#day .fc .fc-timegrid-slot-minor{
+border-top: 0.5px solid rgba(165, 203, 195, 1) !important;
+border-bottom: none !important
+}
+
+
+#month .fc{
+  margin-top: 20px !important;
+  width: 100% !important;
+}
+
+#month .fc-theme-standard .fc-scrollgrid{
+  border: none !important
+}
+
+#month .fc .fc-daygrid-day-number{
+  color: rgba(175, 185, 192, 1) !important
+}
+  
+
+#month .fc-theme-standard td{
+  border: 0.5px solid rgba(114, 135, 150, 0.5)
+}
+
+#month .fc-theme-standard th{
+  border: none !important;
+  padding-bottom: 5px !important;
+}
+
+#month .fc-theme-standard td, .fc-theme-standard th{
+  border: 0.5px solid rgba(114, 135, 150, 0.5)
+}
+#month .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+  height: 110px !important;
+  overflow: auto !important;
+  padding: 0 5px !important;
+}
+
+#month .fc-direction-ltr .fc-daygrid-event .fc-event-time, #month .fc-daygrid-event-dot {
+  display: none !important;
+}
+
+
+#month .fc-scroller{
+  overflow: hidden !important;
+}
+
+#month .fc-scroller.fc-scroller-liquid-absolute{
+  overflow: auto scroll !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgba(32, 44, 34, 1);
+  border-radius: 5px;
+}
+
+
+#month .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start{
+  padding: 10px;
+  border: none !important;
+  border-radius: 7px !important;
+  border-left: 7px solid saddlebrown !important;
+  border-top-left-radius: 5px!important;
+  border-bottom-left-radius: 5px!important;
+  box-shadow: none !important;
+  height: 30px !important;
+  background-color: rgba(64, 87, 66, 1) !important;
+  margin-bottom: 7px !important;
+}
+
+
+#month .fc-day-today{
+  background-color: rgba(47, 65, 49, 1) !important;
+}
+
+#week .fc{
+  padding-top: 20px !important;
+}
+
+#week .fc-theme-standard .fc-scrollgrid{
+  border: none !important;
+}
+
+#week .fc-theme-standard th{
+  border: none !important;
+}
+
+#week .fc-scrollgrid-sync-inner{
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#week .fc .fc-scrollgrid-section-liquid > td{
+  border-left: 0.5px solid rgba(190, 193, 190, 1);
+  border-top: 0.5px solid rgba(190, 193, 190, 1);
+}

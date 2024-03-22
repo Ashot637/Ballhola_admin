@@ -1,19 +1,39 @@
-import { lazy, type FC } from 'react';
+import { lazy, type FC } from "react";
 
-import LoginPage from '../pages/LoginPage/LoginPage';
+import LoginPage from "../pages/LoginPage/LoginPage";
+import NewMatch from "../pages/DashboardLayout/Calendar/NewMatch/NewMatch";
+import MatchDetails from "../pages/DashboardLayout/Calendar/MatchDetails/MatchDetails";
 
-const DashboardLayout = lazy(() => import('../pages/DashboardLayout/DashboardLayout'));
-const Dashboard = lazy(() => import('../pages/DashboardLayout/Dashboard/Dashboard'));
-const Games = lazy(() => import('../pages/DashboardLayout/Games/Games'));
-const NewGame = lazy(() => import('../pages/DashboardLayout/Games/NewGame/NewGame'));
-const Users = lazy(() => import('../pages/DashboardLayout/Users/Users'));
-const Stadions = lazy(() => import('../pages/DashboardLayout/Stadions/Stadions'));
-const NewStadion = lazy(() => import('../pages/DashboardLayout/Stadions/NewStadion/NewStadion'));
-const Facilities = lazy(() => import('../pages/DashboardLayout/Facilities/Facilities'));
-const NewFacilitie = lazy(
-  () => import('../pages/DashboardLayout/Facilities/NewFacilitie/NewFacilitie'),
+
+const DashboardLayout = lazy(
+  () => import("../pages/DashboardLayout/DashboardLayout")
 );
-const SingleUser = lazy(() => import('../pages/DashboardLayout/Users/SingleUser/SingleUser'));
+const Dashboard = lazy(
+  () => import("../pages/DashboardLayout/Dashboard/Dashboard")
+);
+const Calendar = lazy(
+  () => import("../pages/DashboardLayout/Calendar/Calendar")
+);
+const Games = lazy(() => import("../pages/DashboardLayout/Games/Games"));
+const NewGame = lazy(
+  () => import("../pages/DashboardLayout/Games/NewGame/NewGame")
+);
+const Users = lazy(() => import("../pages/DashboardLayout/Users/Users"));
+const Stadions = lazy(
+  () => import("../pages/DashboardLayout/Stadions/Stadions")
+);
+const NewStadion = lazy(
+  () => import("../pages/DashboardLayout/Stadions/NewStadion/NewStadion")
+);
+const Facilities = lazy(
+  () => import("../pages/DashboardLayout/Facilities/Facilities")
+);
+const NewFacilitie = lazy(
+  () => import("../pages/DashboardLayout/Facilities/NewFacilitie/NewFacilitie")
+);
+const SingleUser = lazy(
+  () => import("../pages/DashboardLayout/Users/SingleUser/SingleUser")
+);
 
 export interface IRoute {
   path: string;
@@ -23,62 +43,70 @@ export interface IRoute {
 
 export const publicRoutes: IRoute[] = [
   {
-    path: '/',
+    path: "/",
     Element: LoginPage,
   },
 ];
 
 export const adminRoutes: IRoute[] = [
   {
-    path: 'dashboard',
+    path: "dashboard",
     Element: DashboardLayout,
     children: [
       {
-        path: '',
+        path: "",
         Element: Dashboard,
       },
       {
-        path: 'games',
+        path: "games",
         Element: Games,
       },
       {
-        path: 'games/:id/edit',
+        path: "calendar",
+        Element: Calendar,
+      },
+      {
+        path: "calendar/details",
+        Element: MatchDetails,
+      },
+      {
+        path: "games/:id/edit",
         Element: NewGame,
       },
       {
-        path: 'games/new',
+        path: "games/new",
         Element: NewGame,
       },
       {
-        path: 'stadions',
+        path: "stadions",
         Element: Stadions,
       },
       {
-        path: 'stadions/:id/edit',
+        path: "stadions/:id/edit",
         Element: NewStadion,
       },
       {
-        path: 'stadions/new',
+        path: "stadions/new",
         Element: NewStadion,
       },
       {
-        path: 'facilities',
+        path: "facilities",
         Element: Facilities,
       },
       {
-        path: 'facilities/:id/edit',
+        path: "facilities/:id/edit",
         Element: NewFacilitie,
       },
       {
-        path: 'facilities/new',
+        path: "facilities/new",
         Element: NewFacilitie,
       },
       {
-        path: 'users',
+        path: "users",
         Element: Users,
       },
       {
-        path: 'users/:id',
+        path: "users/:id",
         Element: SingleUser,
       },
     ],

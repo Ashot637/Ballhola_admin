@@ -1,9 +1,10 @@
-import { useEffect, type FC } from 'react';
+import { useEffect, type FC, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { adminRoutes, publicRoutes } from '../routes/routes';
 import ProtectedRoute from '../routes/ProtectedRoute';
 import { fetchAuthMe } from '../store/authSlice';
 import { useAppDispatch } from '../store/store';
+import Spinner from '../UI/Spinner/Spinner';
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
@@ -16,6 +17,7 @@ const App: FC = () => {
 
   return (
     <div className="container h-100">
+      <Suspense>
       <Routes>
         {publicRoutes.map(({ path, Element }) => {
           return <Route key={path} path={path} element={<Element />} />;
@@ -36,6 +38,7 @@ const App: FC = () => {
           })}
         </Route>
       </Routes>
+      </Suspense>
     </div>
   );
 };
