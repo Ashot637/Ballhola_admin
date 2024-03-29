@@ -20,7 +20,7 @@ import { MdEdit } from 'react-icons/md';
 import { type IGame } from '../../../types/Game';
 import dayjs from 'dayjs';
 
-const fetcher = (url: string) => axios.get(url).then(({ data }) => data);
+const fetcher = (url: string) => axios.post(url).then(({ data }) => data);
 
 const Games = () => {
   const { data, mutate } = useSWR<IGame[]>('/game/getAllFromAdminPanel', fetcher);
@@ -36,7 +36,7 @@ const Games = () => {
   };
 
   const renderEditCell = (params: GridRenderCellParams) => {
-    console.log(params.id)
+    console.log(params.id);
     return (
       <div className="flex jst-end cp">
         <MdEdit

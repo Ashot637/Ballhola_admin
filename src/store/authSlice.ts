@@ -14,7 +14,7 @@ export const fetchLogin = createAsyncThunk<IUser, ILogin>(
   'auth/fetchLogin',
   async (params, thunkAPI) => {
     const { data } = await axios.post('/auth/login', { ...params });
-    if (data?.role === 'ADMIN') {
+    if (data?.role === 'ADMIN' || data?.role === 'STADION_OWNER') {
       localStorage.setItem('accessToken', data.accessToken);
       return data;
     }
@@ -26,7 +26,7 @@ export const fetchAuthMe = createAsyncThunk<IUser, void>(
   'auth/fetchAuthMe',
   async (_, thunkAPI) => {
     const { data } = await axios.get<IUser>('/auth');
-    if (data?.role === 'ADMIN') {
+    if (data?.role === 'ADMIN' || data?.role === 'STADION_OWNER') {
       localStorage.setItem('accessToken', data.accessToken);
       return data;
     }
