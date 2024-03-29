@@ -10,4 +10,5 @@ export interface IGame {
   maxPlayersCount: number;
   stadion: IStadion;
   users: IUser[];
+  isPublic: boolean
 }

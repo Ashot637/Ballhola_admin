@@ -23,7 +23,7 @@ import dayjs from 'dayjs';
 const fetcher = (url: string) => axios.get(url).then(({ data }) => data);
 
 const Games = () => {
-  const { data, mutate } = useSWR<IGame[]>('/game/getAll', fetcher);
+  const { data, mutate } = useSWR<IGame[]>('/game/getAllFromAdminPanel', fetcher);
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
 

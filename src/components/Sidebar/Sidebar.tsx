@@ -13,11 +13,11 @@ const MENU: IMenuItem[] = [
     link: '/dashboard',
     Icon: MdSpaceDashboard,
   },
-  // {
-  //   tilte: 'Calendar',
-  //   link: '/dashboard/calendar',
-  //   Icon: MdCalendarMonth,
-  // },
+  {
+    tilte: 'Calendar',
+    link: '/dashboard/calendar',
+    Icon: MdCalendarMonth,
+  },
   {
     tilte: 'Games',
     link: '/dashboard/games',

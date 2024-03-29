@@ -33,8 +33,9 @@ const NewStadion: FC = () => {
   const [address_en, setAddress_en] = useState<string>("");
   const [address_ru, setAddress_ru] = useState<string>("");
   const [address_am, setAddress_am] = useState<string>("");
-  // const [phone_number, setPhone_number] = useState<string>("");
-  // const [password, setPassword] = useState<string>("");
+  const [phone_number, setPhone_number] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [name, setName] = useState<string>("");
   const [selectedFacilities, setSelectedFacilities] = useState<IFacilitie[]>(
     []
   );
@@ -53,8 +54,9 @@ const NewStadion: FC = () => {
         setAddress_am(data.address_am);
         setSelectedFacilities(data.facilities);
         setImgUrl(data.img);
-        // setPhone_number(data.phone_number);
-        // setPassword(data.password)
+        setPhone_number(data.phone_number);
+        setPassword(data.password)
+        setName(data.name)
       });
     }
   }, [id]);
@@ -84,8 +86,9 @@ const NewStadion: FC = () => {
     formData.append("address_en", address_en);
     formData.append("address_ru", address_ru);
     formData.append("address_am", address_am);
-    // formData.append("phone_number", phone_number);
-    // formData.append("password", password);
+    formData.append("phone", phone_number);
+    formData.append("password", password);
+    formData.append("name", name);
     formData.append(
       "facilitiesIds",
       JSON.stringify(selectedFacilities.map((f) => f.id))
@@ -143,12 +146,13 @@ const NewStadion: FC = () => {
             onChange={setAddress_am}
             label="Address (Armenian)"
           />
-          {/* <Input
+          <Input
             value={phone_number}
             onChange={setPhone_number}
             label="Stadium owner phone number"
           />
-          <Input value={password} onChange={setPassword} label="Stadium owner password" /> */}
+          <Input value={name} onChange={setName} label="Name" />
+          {!id && <Input value={password} onChange={setPassword} label="Stadium owner password" />}
           <label className={classes.label}>Faiclities</label>
           <div className="flex c-gap-10 wrap">
             {selectedFacilities.map((selectedFacilitie) => {
@@ -220,8 +224,8 @@ const NewStadion: FC = () => {
               !address_en ||
               !address_ru ||
               !address_am ||
-              // !password ||
-              // !phone_number ||
+              !password ||
+              !phone_number ||
               !imgUrl
             }
             className={classes.btn}
