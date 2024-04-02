@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import classes from "./dropdown.module.scss";
 const Dropdown = ({ stadium, onClick, current }: { stadium: any[], onClick: any, current: string}) => {
-  const [value, setValue] = useState<string>(stadium? stadium[0]?.title_en : 'Sports complex of Polytechnic University');
+  const [value, setValue] = useState<string>(stadium[0].title_en);
   const [open, setOpen] = useState<boolean>(false);
 
 

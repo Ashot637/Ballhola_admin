@@ -11,7 +11,8 @@
     padding: 40px 20px;
 }
 
-.options{
+.options,
+.active{
     height: 40px;
     color:#EFFFC8;
     border-radius: 30px;
@@ -76,9 +77,30 @@
 }
 
 .time{
-    color: rgba(164, 176, 38, 1) !important
+    color: #FFC038 !important
 }
 
 .other{
     color: rgba(190, 193, 190, 1) !important;
+}
+
+.newGame{
+    border-left-color:  #A5CBC3 !important;
+    color: #A5CBC3 !important;
+}
+
+.options:hover,
+.active{
+    border-color: rgba(165, 203, 195, 1);
+    color:rgba(165, 203, 195, 1);
+}
+
+.fewPlaces{
+border-color: #EFFFC8 !important;
+color: #EFFFC8 !important;
+}
+
+.soldOut{
+    border-left-color:  #D1E231 !important;
+    color: #D1E231 !important;
 }

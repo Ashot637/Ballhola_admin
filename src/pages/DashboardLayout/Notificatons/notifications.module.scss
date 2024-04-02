@@ -1,0 +1,42 @@
+.container{
+    border-radius: 32px;
+    background-color: #2F4131;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding: 40px 20px;
+}
+
+.bell{
+    background-image: url('../../../images/Notification.svg');
+    width: 26px;
+    height: 30px;
+    scale: 0.91;
+}
+
+.border{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block{
+    display: flex;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.texts{
+    margin-left: 70px;
+    width: 100%;
+}
+
+.divider{
+    height: 0.5px;
+    background-color: #BEC1BE;
+    margin-top: 20px;
+}

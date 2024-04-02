@@ -9,32 +9,45 @@ import Dropdown from "../../../UI/Dropdown/Dropdown";
 export default function CalendarLayout({
   view = "dayGridWeek",
   data,
-  stadiums,
+  stadions,
 }: {
   view: string;
   data: any[];
-  stadiums: any[];
+  stadions: any[];
 }) {
-  console.log(stadiums);
   const [events, setEvents] = useState<any[]>([]);
 
   const navigate = useNavigate();
 
   const calendarRef = useRef<any>(null);
 
-  const [currentStadium, setCurrentStadium] = useState<string>(
-    data[0].stadion.title
-  );
+  const [currentStadium, setCurrentStadium] = useState<string>(" ");
+
+  const handleEventClick = (id: string) => {
+    navigate(`${id}/details`);
+  };
 
   useEffect(() => {
+    currentStadium == " " && setCurrentStadium(stadions[0].title_en);
     const filteredEvents = data.filter(
       (item) => item.stadion.title_en === currentStadium
     );
     const updatedEvents = filteredEvents.map((item) => ({
-      title: "New Game",
+      id: item.id,
+      title:
+        item.maxPlayersCount - item.playersCount === 0
+          ? "Sold Out"
+          : item.maxPlayersCount - item.playersCount < 3
+          ? `Only ${item.maxPlayersCount - item.playersCount} places are left`
+          : "New Game",
       start: item.startTime,
       end: item.endTime,
-      className: " ",
+      className:
+        item.maxPlayersCount - item.playersCount === 0
+          ? classes.soldOut
+          : item.maxPlayersCount - item.playersCount < 3
+          ? classes.fewPlaces
+          : classes.newGame,
     }));
     setEvents(updatedEvents);
   }, [data, currentStadium]);
@@ -43,11 +56,14 @@ export default function CalendarLayout({
     if (calendarRef.current) {
       const calendarApi = calendarRef.current.getApi();
       if (view === "dayGridWeek") {
-        calendarApi.gotoDate(new Date());
-        calendarApi.changeView("dayGridWeek");
+        setTimeout(() => {
+          calendarApi.gotoDate(new Date());
+        });
       }
       if (["timeGridDay", "dayGridWeek", "dayGridMonth"].includes(view)) {
-        calendarApi.changeView(view);
+        setTimeout(() => {
+          calendarApi.changeView(view);
+        });
       }
     }
   }, [view]);
@@ -72,17 +88,21 @@ export default function CalendarLayout({
         }
       >
         <div className="flex jst-between align-center">
-          <p style={{ fontWeight: "bold", color: 'rgba(190, 193, 190, 1)' }}>
+          <p style={{ fontWeight: "bold", color: "rgba(190, 193, 190, 1)" }}>
             {`Today | `}
-            <span style={{fontWeight: 300}}>
+            <span style={{ fontWeight: 300 }}>
               {new Date().toLocaleDateString("en-US", { weekday: "long" })}
             </span>
           </p>
-          <Dropdown
-            current={currentStadium}
-            onClick={(val: string) => setCurrentStadium(val)}
-            stadium={stadiums}
-          />
+          {stadions.length > 1 && (
+            <Dropdown
+              current={
+                currentStadium ? currentStadium : data[0].stadion.title_en
+              }
+              onClick={(val: string) => setCurrentStadium(val)}
+              stadium={stadions}
+            />
+          )}
         </div>
         <FullCalendar
           ref={calendarRef}
@@ -92,9 +112,6 @@ export default function CalendarLayout({
             minute: "2-digit",
           }}
           timeZone="local"
-          dayHeaderClassNames={function (arg) {
-            return arg.isToday ? classes.time : classes.other;
-          }}
           slotMinTime={"9:00AM"}
           slotMaxTime={"24:00PM"}
           titleFormat={{ month: "long" }}
@@ -107,11 +124,22 @@ export default function CalendarLayout({
                 }
               : false
           }
-          dayHeaderContent={function (arg) {
-            return `${arg.date.toString().split(" ")[0]} ${
-              arg.date.toString().split(" ")[2]
-            }`;
-          }}
+          dayHeaderContent={(arg) => (
+            <div
+              className={
+                view === "dayGridWeek" &&
+                arg.date.getDay() === new Date().getDay()
+                  ? classes.time
+                  : classes.other
+              }
+            >
+              {view === "dayGridWeek"
+                ? `${arg.date.toString().split(" ")[0]} ${
+                    arg.date.toString().split(" ")[2]
+                  }`
+                : arg.date.toString().split(" ")[0]}
+            </div>
+          )}
           plugins={[dayGridPlugin, timeGridPlugin]}
           events={events}
           eventOverlap={true}
@@ -124,7 +152,7 @@ export default function CalendarLayout({
           }}
           displayEventEnd={true}
           eventBackgroundColor="rgba(64, 87, 66, 1)"
-          eventClick={() => navigate("details")}
+          eventClick={(info) => handleEventClick(info.event.id)}
         />
       </div>
     </>

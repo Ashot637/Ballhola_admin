@@ -3,6 +3,7 @@ import { lazy, type FC } from "react";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import NewMatch from "../pages/DashboardLayout/Calendar/NewMatch/NewMatch";
 import MatchDetails from "../pages/DashboardLayout/Calendar/MatchDetails/MatchDetails";
+import Notifications from '../pages/DashboardLayout/Notificatons/Notifications';
 
 
 const DashboardLayout = lazy(
@@ -58,6 +59,10 @@ export const adminRoutes: IRoute[] = [
         Element: Dashboard,
       },
       {
+        path: "notifications",
+        Element: Notifications,
+      },
+      {
         path: "games",
         Element: Games,
       },
@@ -66,7 +71,7 @@ export const adminRoutes: IRoute[] = [
         Element: Calendar,
       },
       {
-        path: "calendar/details",
+        path: "calendar/:id/details",
         Element: MatchDetails,
       },
       {

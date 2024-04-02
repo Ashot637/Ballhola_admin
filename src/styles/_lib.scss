@@ -193,12 +193,9 @@ body .css-ptkaw2-MuiDataGrid-root {
       z-index: 10000000;
       position: absolute !important;
       left: 130px !important;
+      cursor: pointer !important;
     }
 
-    .fc-event:focus{
-      border-left: 7px solid saddlebrown !important;
-      background-color:  rgba(86,102,77,1)!important;
-    }
 
   .fc-event-selected::after, .fc-event:focus::after{
       position:  relative !important;
@@ -262,6 +259,7 @@ body .css-ptkaw2-MuiDataGrid-root {
       padding: 0 5px !important;
     }
 
+    #month .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events
     .fc-daygrid-event-dot {
       display: none !important; 
     }
@@ -273,31 +271,32 @@ body .css-ptkaw2-MuiDataGrid-root {
     #month .fc-scroller.fc-scroller-liquid-absolute{
       overflow: auto scroll !important;
     }
+   ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
 
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    }
-    
-    ::-webkit-scrollbar-thumb,
-    ::-webkit-scrollbar-thumb:horizontal {
-      background-color: rgba(32, 44, 34, 1);
-      border-radius: 5px;
-    }
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgba(32, 44, 34, 1);
+  border-radius: 5px;
+}
 
 #week .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start{
-      padding: 10px;
       border-radius: 7px !important;
+      padding-left: 10px !important;
       border: none !important;
-      border-left: 7px solid saddlebrown !important;
+      border-left: 7px solid !important;
       box-shadow: none !important;
-      height: 90px !important;
       gap:10px !important;
+      height: 95px !important;
+      cursor: pointer !important;
       align-items: flex-start !important;
+      border-color: rgba(165, 203, 195, 1);
       background-color: rgba(64, 87, 66, 1) !important;
       margin-bottom: 7px !important;
       display: flex !important;
@@ -309,7 +308,8 @@ body .css-ptkaw2-MuiDataGrid-root {
   padding: 10px;
   border-radius: 7px !important;
   border: none !important;
-  border-left: 7px solid saddlebrown !important;
+  cursor:  pointer !important;
+  border-left: 7px solid !important;
   box-shadow: none !important;
   font-size: 16px !important;
   font-weight: 300 !important;
@@ -319,7 +319,6 @@ body .css-ptkaw2-MuiDataGrid-root {
   margin-bottom: 7px !important;
   display: flex !important;
   flex-direction: column !important;
-  color: rgba(190, 193, 190, 1) !important
 }
 
 
@@ -367,6 +366,10 @@ body .css-ptkaw2-MuiDataGrid-root {
 
     .fc-day-today{
       background-color: rgba(47, 65, 49, 1) !important;
+    }
+
+#month .fc-day-today .fc-daygrid-day-number{
+      color: #FFC038 !important;
     }
 
     .fc-direction-ltr .fc-daygrid-event .fc-event-time{

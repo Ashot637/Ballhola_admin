@@ -20,7 +20,7 @@ import { MdEdit } from 'react-icons/md';
 import { type IGame } from '../../../types/Game';
 import dayjs from 'dayjs';
 
-const fetcher = (url: string) => axios.post(url).then(({ data }) => data);
+const fetcher = (url: string) => axios.get(url).then(({ data }) => data);
 
 const Games = () => {
   const { data, mutate } = useSWR<IGame[]>('/game/getAllFromAdminPanel', fetcher);

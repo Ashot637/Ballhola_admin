@@ -20,7 +20,6 @@ import Spinner from "../../../../UI/Spinner/Spinner";
 import { type IStadion } from "../../../../types/Stadion";
 import { type IGame } from "../../../../types/Game";
 
-import PlayersInfo from "./PlayersInfo/PlayersInfo";
 import { IUser } from "../../../../types/User";
 
 const fetcher = (url: string) => axios.get(url).then(({ data }) => data);
@@ -71,6 +70,7 @@ const NewGame: FC = () => {
       maxPlayersCount,
       stadionId,
       price,
+      range : 1
     };
     if (!id) {
       await axios.post("/game/create", data);
