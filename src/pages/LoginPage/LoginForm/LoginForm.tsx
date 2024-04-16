@@ -23,10 +23,11 @@ const LoginForm = () => {
 
   return (
     <form className={classes.form} onSubmit={onSubmit}>
+      <h2 style={{color: "white", textAlign: 'center'}}>Log in</h2>
       <Input type="text" value={phone} onChange={setPhone} label="Phone" />
       <Input type="password" value={password} onChange={setPassword} label="Password" />
       <p className={classes.error}>{isInvalid && 'Invalid email or password'}</p>
-      <Button type="submit" disabled={password.length < 6 || phone.length <= 8} value="Submit" />
+      <Button type="submit" disabled={password.length < 6 || phone.length <= 8} value="Log in" />
     </form>
   );
 };

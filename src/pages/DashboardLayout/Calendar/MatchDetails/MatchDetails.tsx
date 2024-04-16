@@ -115,7 +115,7 @@ const MatchDetails = () => {
               <p>{`${i + 1}. ${el.name}`}</p>
             </div>
           ))}
-          <p style={{ color: "rgba(209, 226, 49, 1)", marginTop: 10 }}>{`${
+          <p style={{ color: "rgba(26, 130, 237, 1)", marginTop: 10 }}>{`${
             22 - matchPlayers.length < 10 ? "Only" : ""
           }${22 - matchPlayers.length} spots are left`}</p>
         </div>

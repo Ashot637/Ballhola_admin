@@ -151,7 +151,6 @@ export default function CalendarLayout({
             meridiem: false,
           }}
           displayEventEnd={true}
-          eventBackgroundColor="rgba(64, 87, 66, 1)"
           eventClick={(info) => handleEventClick(info.event.id)}
         />
       </div>

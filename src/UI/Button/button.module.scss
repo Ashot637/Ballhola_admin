@@ -1,7 +1,8 @@
 .btn {
-  background: var(--color-primary);
-  color: var(--color-text-primary);
+  background: #0CF9DD;
+  color: black;
   padding: 15px 25px;
+  font-weight: bold;
   border-radius: 5px;
 
   &:hover:enabled {

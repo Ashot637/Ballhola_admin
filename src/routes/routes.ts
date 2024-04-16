@@ -83,15 +83,15 @@ export const adminRoutes: IRoute[] = [
         Element: NewGame,
       },
       {
-        path: "stadions",
+        path: "stadiums",
         Element: Stadions,
       },
       {
-        path: "stadions/:id/edit",
+        path: "stadiums/:id/edit",
         Element: NewStadion,
       },
       {
-        path: "stadions/new",
+        path: "stadiums/new",
         Element: NewStadion,
       },
       {

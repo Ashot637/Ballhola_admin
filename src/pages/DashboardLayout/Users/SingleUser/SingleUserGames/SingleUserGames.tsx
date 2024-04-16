@@ -42,10 +42,10 @@ const SingleUserGames: FC<ISingleUserGames> = ({ games }) => {
     { field: 'id', headerName: 'ID', width: 50 },
     {
       field: 'stadionName',
-      headerName: 'Stadion Name',
+      headerName: 'Stadium Name',
       width: 250,
       renderCell: (params) => (
-        <Link to={`/dashboard/stadions/${params.row.stadionId}/edit`}>{params.value}</Link>
+        <Link to={`/dashboard/stadiums/${params.row.stadionId}/edit`}>{params.value}</Link>
       ),
     },
     { field: 'startTime', headerName: 'Start Time', width: 150 },

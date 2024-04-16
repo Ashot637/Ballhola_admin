@@ -72,10 +72,10 @@ const NewFacilitie: FC = () => {
   return (
     <div className="h-max">
       <div className="flex c-gap-10 mb-15">
-        <Link to={'/dashboard/stadions'}>
+        <Link to={'/dashboard/stadiums'}>
           <IoIosArrowRoundBack size={45} className={classes.icon} />
         </Link>
-        <h2 className="title">{id ? 'Edit Stadion' : 'New Stadion'}</h2>
+        <h2 className="title">{id ? 'Edit Stadium' : 'New Stadium'}</h2>
       </div>
       <div className="h-max pb-65">
         <form className={classes.form} onSubmit={onSubmit}>

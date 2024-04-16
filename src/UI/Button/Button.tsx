@@ -29,7 +29,7 @@ const Button: FC<IButtonProps | IButtonPropsSubmit> = (props) => {
     </button>
   ) : (
     <button
-      type={props.type}
+      type={props.type} 
       disabled={props.disabled}
       className={clsx(classes.btn, props.className, classes[props.size || 'md'])}>
       {props.value}

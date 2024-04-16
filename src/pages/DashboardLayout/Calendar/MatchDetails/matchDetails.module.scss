@@ -1,6 +1,3 @@
-// *{
-//     color:white;
-// }
 
 .overlay{
     width: 100%;
@@ -16,7 +13,7 @@
 }
 
 .modal{
-    background-color: rgba(47, 65, 49, 1);
+    background-color: rgba(3, 33, 118, 1);
     width: 100%;
     height: auto;
     position: relative;
@@ -45,17 +42,12 @@
 
 .playersBlock{
     width: 100%;
-    background-color: rgba(32, 44, 34, 1);
+    background-color: rgba(3, 24, 82, 1);
     border-radius: 15px;
     padding: 20px;
     line-height: 2;
     text-align: center;
 }
-
-.inputs{
-    background-color: rgba(32, 44, 34, 1);
-}
-
 
 .button{
     background-color: rgba(0, 128, 0, 1);

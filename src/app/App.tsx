@@ -4,7 +4,7 @@ import { adminRoutes, publicRoutes } from '../routes/routes';
 import ProtectedRoute from '../routes/ProtectedRoute';
 import { fetchAuthMe } from '../store/authSlice';
 import { useAppDispatch } from '../store/store';
-import Spinner from '../UI/Spinner/Spinner';
+
 
 const App: FC = () => {
   const dispatch = useAppDispatch();

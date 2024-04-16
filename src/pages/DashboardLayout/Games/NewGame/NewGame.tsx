@@ -120,9 +120,9 @@ const NewGame: FC = () => {
               className="custom-datetime-picker"
             />
           </LocalizationProvider>
-          <label className={classes.label}>Stadion</label>
+          <label className={classes.label}>Stadium</label>
           {!selectedStaion && !id ? (
-            <label className={classes.label}>Empty Staidons</label>
+            <label className={classes.label}>Empty Stadiums</label>
           ) : (
             <Select
               value={selectedStaion}

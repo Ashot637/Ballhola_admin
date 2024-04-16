@@ -13,7 +13,6 @@ import { IStadion } from "../../../types/Stadion";
 const fetcher = (url: string) => axios.get(url).then(({ data }) => data);
 
 const Calendar = () => {
-  const [modal, setModal] = useState<boolean>(false);
   const [view, setView] = useState<string>("timeGridDay");
 
   const { data } = useSWR<IGame[]>(
@@ -30,7 +29,6 @@ const Calendar = () => {
 
   return (
     <>
-      {modal && <NewMatch onCancel={() => setModal(false)} />}
       <div className="w-max flex jst-between">
         <Title />
         <div className="h-max">

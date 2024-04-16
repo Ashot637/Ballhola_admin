@@ -29,8 +29,8 @@ const MENU: IMenuItem[] = [
     Icon: GiSoccerBall,
   },
   {
-    tilte: "Stadions",
-    link: "/dashboard/stadions",
+    tilte: "Stadiums",
+    link: "/dashboard/stadiums",
     Icon: GiSoccerField,
   },
   {

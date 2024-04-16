@@ -36,11 +36,6 @@ const Input: FC<IInputProps> = ({
   return (
     <div className={classes.box}>
       <label className={classes.label}>{label}</label>
-      {calendar && (
-        <div className={classes.calendarIcon}>
-          <MdCalendarMonth />
-        </div>
-      )}
       <input
         className={className ? className + ' ' + classes.input : classes.input}
         type={type}

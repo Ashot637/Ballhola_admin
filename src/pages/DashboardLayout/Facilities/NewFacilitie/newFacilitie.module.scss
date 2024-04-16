@@ -5,16 +5,13 @@
 
 .form {
   height: 100%;
-  background: var(--color-dark);
+  background: rgba(3, 33, 118, 1);
   padding: 20px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 
-  input {
-    background: var(--color-bg);
-  }
 }
 
 .btn {
