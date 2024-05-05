@@ -99,7 +99,7 @@ const NewStadion: FC = () => {
     } else {
       await axios.patch("/stadion/update/" + id, formData);
     }
-    navigate("/dashboard/stadions");
+    navigate("/dashboard/stadiums");
   };
 
   if (id && !imgUrl) {
