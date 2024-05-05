@@ -49,7 +49,7 @@ const NewStadion: FC = () => {
         setTitle_en(data.title_en);
         setTitle_ru(data.title_ru);
         setTitle_am(data.title_am);
-        setAddress_en(data.address_ru);
+        setAddress_en(data.address_en);
         setAddress_ru(data.address_ru);
         setAddress_am(data.address_am);
         setSelectedFacilities(data.facilities);
