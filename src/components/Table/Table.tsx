@@ -5,7 +5,6 @@ import {
   type GridRowsProp,
   type GridRowSelectionModel,
 } from '@mui/x-data-grid';
-import '../../styles/_lib.scss'
 
 interface TableProps {
   rows: GridRowsProp;
