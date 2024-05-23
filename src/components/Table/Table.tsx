@@ -1,10 +1,11 @@
-import { type FC } from 'react';
+import { type FC } from "react";
 import {
   DataGrid,
   type GridColDef,
   type GridRowsProp,
   type GridRowSelectionModel,
-} from '@mui/x-data-grid';
+} from "@mui/x-data-grid";
+import styles from "./table.module.scss";
 
 interface TableProps {
   rows: GridRowsProp;
@@ -14,11 +15,17 @@ interface TableProps {
   onRowClick?: (item: any) => void;
 }
 
-const Table: FC<TableProps> = ({ rows, columns, onSelectItem, isNotSelectable, onRowClick }) => {
+const Table: FC<TableProps> = ({
+  rows,
+  columns,
+  onSelectItem,
+  isNotSelectable,
+  onRowClick,
+}) => {
   if (isNotSelectable) {
     return (
       <DataGrid
-        rows={rows}
+       rows={rows}
         columns={columns}
         initialState={{
           pagination: {
@@ -33,6 +40,7 @@ const Table: FC<TableProps> = ({ rows, columns, onSelectItem, isNotSelectable, o
 
   return (
     <DataGrid
+    className={styles.table}
       rows={rows}
       columns={columns}
       initialState={{

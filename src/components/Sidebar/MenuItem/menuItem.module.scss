@@ -1,5 +1,5 @@
-.item {
-  color: var(--color-text-secondary);
+.item{
+  color: white;
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -16,4 +16,15 @@
 .active {
   background: #2A59D2;
   color: var(--color-text-primary);
+}
+
+.disabled{
+  color: grey !important;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding: 16px 0 16px 16px;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: default;
 }

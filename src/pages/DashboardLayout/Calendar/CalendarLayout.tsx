@@ -1,10 +1,12 @@
+import { useEffect, useRef, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import { useEffect, useRef, useState } from "react";
 import classes from "./calendar.module.scss";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "../../../UI/Dropdown/Dropdown";
+import { DateCalendar, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export default function CalendarLayout({
   view = "dayGridWeek",
@@ -16,19 +18,20 @@ export default function CalendarLayout({
   stadions: any[];
 }) {
   const [events, setEvents] = useState<any[]>([]);
+  const [currentStadium, setCurrentStadium] = useState<string>(" ");
+  const [current, setCurrent] = useState(new Date())
 
   const navigate = useNavigate();
-
   const calendarRef = useRef<any>(null);
-
-  const [currentStadium, setCurrentStadium] = useState<string>(" ");
 
   const handleEventClick = (id: string) => {
     navigate(`${id}/details`);
   };
 
   useEffect(() => {
-    currentStadium == " " && setCurrentStadium(stadions[0].title_en);
+    if (currentStadium === " ") {
+      setCurrentStadium(stadions[0]?.title_en);
+    }
     const filteredEvents = data.filter(
       (item) => item.stadion.title_en === currentStadium
     );
@@ -68,16 +71,21 @@ export default function CalendarLayout({
     }
   }, [view]);
 
-  if (events.length > 2) {
-    if (events[0].start === events[1].start || events[0].end > events[1].end) {
-      events[1].className = classes["second-event"];
-    } else if (events[1].start < events[0].start) {
-      events[0].className = classes["second-event"];
-    }
+  const dateHandler=(currentDate: Date)=>{
+    const calendarApi = calendarRef.current.getApi();
+    calendarApi.gotoDate(new Date(currentDate));
   }
 
+
   return (
-    <>
+    <div style={view === "timeGridDay" ? { display: "flex", gap: 30 } : {}}>
+      {view === "timeGridDay" && (
+        <div id="small-month" style={{width:350, position: 'relative'}}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateCalendar onChange={(e:any)=>dateHandler(e)} className={classes.newCalendar} />
+          </LocalizationProvider>
+        </div>
+      )}
       <div
         id={
           view === "dayGridMonth"
@@ -87,13 +95,7 @@ export default function CalendarLayout({
             : "day"
         }
       >
-        <div className="flex jst-between align-center">
-          <p style={{ fontWeight: "bold", color: "rgba(190, 193, 190, 1)" }}>
-            {`Today | `}
-            <span style={{ fontWeight: 300 }}>
-              {new Date().toLocaleDateString("en-US", { weekday: "long" })}
-            </span>
-          </p>
+        <div className="flex jst-end">
           {stadions.length > 1 && (
             <Dropdown
               current={
@@ -105,6 +107,7 @@ export default function CalendarLayout({
           )}
         </div>
         <FullCalendar
+          initialDate={new Date(current)}
           ref={calendarRef}
           firstDay={1}
           slotLabelFormat={{
@@ -112,7 +115,8 @@ export default function CalendarLayout({
             minute: "2-digit",
           }}
           timeZone="local"
-          slotMinTime={"9:00AM"}
+          height={1000}
+          slotMinTime={"8:00AM"}
           slotMaxTime={"24:00PM"}
           titleFormat={{ month: "long" }}
           headerToolbar={
@@ -154,6 +158,6 @@ export default function CalendarLayout({
           eventClick={(info) => handleEventClick(info.event.id)}
         />
       </div>
-    </>
+    </div>
   );
 }

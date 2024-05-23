@@ -26,6 +26,7 @@ const fetcher = (url: string) => axios.get(url).then(({ data }) => data);
 
 const NewGame: FC = () => {
   const { data: stadions } = useSWR<IStadion[]>("/stadion/getAll", fetcher);
+  const [disabledTimes, setDisabledTimes] = useState<{ date: string, hour: number, minute: number }[]>([]);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -41,6 +42,7 @@ const NewGame: FC = () => {
       setSelectedStaion(stadions[0]?.title_en);
     }
   }, [stadions, id]);
+  
 
   useEffect(() => {
     if (id) {
@@ -54,7 +56,7 @@ const NewGame: FC = () => {
       });
     }
   }, [id]);
-
+  
   if (!stadions || (id && !selectedStaion)) {
     return <Spinner />;
   }
@@ -100,8 +102,25 @@ const NewGame: FC = () => {
             value={String(price)}
             onChange={(value) => setPrice(Number(value))}
             type="number"
-            label="Pirce"
+            label="Price"
           />
+           <label className={classes.label}>Stadium</label>
+          {!selectedStaion && !id ? (
+            <label className={classes.label}>Empty Stadiums</label>
+          ) : (
+            <Select
+              value={selectedStaion}
+              displayEmpty
+              onChange={(e) => setSelectedStaion(e.target.value)}
+              inputProps={{ "aria-label": "Without label" }}
+            >
+              {stadions.map((stadion, index: number) => (
+                <MenuItem key={index} value={stadion.title_en}>
+                  {stadion.title_en}
+                </MenuItem>
+              ))}
+            </Select>
+          )}
           <label className={classes.label}>Start time</label>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DateTimePicker
@@ -120,23 +139,6 @@ const NewGame: FC = () => {
               className="custom-datetime-picker"
             />
           </LocalizationProvider>
-          <label className={classes.label}>Stadium</label>
-          {!selectedStaion && !id ? (
-            <label className={classes.label}>Empty Stadiums</label>
-          ) : (
-            <Select
-              value={selectedStaion}
-              displayEmpty
-              onChange={(e) => setSelectedStaion(e.target.value)}
-              inputProps={{ "aria-label": "Without label" }}
-            >
-              {stadions.map((stadion, index: number) => (
-                <MenuItem key={index} value={stadion.title_en}>
-                  {stadion.title_en}
-                </MenuItem>
-              ))}
-            </Select>
-          )}
           <Button
             disabled={
               !startTime ||

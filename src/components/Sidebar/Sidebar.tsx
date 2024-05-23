@@ -17,6 +17,7 @@ const MENU: IMenuItem[] = [
     tilte: "Dashboard",
     link: "/dashboard",
     Icon: MdSpaceDashboard,
+    disabledForBoth: true
   },
   {
     tilte: "Calendar",
@@ -32,16 +33,19 @@ const MENU: IMenuItem[] = [
     tilte: "Stadiums",
     link: "/dashboard/stadiums",
     Icon: GiSoccerField,
+    disabled: true
   },
   {
     tilte: "Facilities",
     link: "/dashboard/facilities",
     Icon: GiSoccerField,
+    disabled: true
   },
   {
     tilte: "Users",
     link: "/dashboard/users",
     Icon: CiUser,
+    removed: true,
   },
   {
     tilte: "Logout",
@@ -66,9 +70,15 @@ const Sidebar: FC = () => {
             </div>
           </NavLink>
         )}
-        {MENU.map((item) => {
-          return <MenuItem key={item.tilte} item={item} />;
-        })}
+        {user?.role == "STADION_OWNER"
+          ? MENU.filter((i) => !i.removed).map(
+              (item) => {
+                return <MenuItem key={item.tilte} item={item} />;
+              }
+            )
+          : MENU.map((item) => {
+              return <MenuItem key={item.tilte} item={item} />;
+            })}
       </ul>
     </aside>
   );

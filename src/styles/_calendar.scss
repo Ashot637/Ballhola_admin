@@ -99,6 +99,11 @@
     border-radius: 5px;
 }
 
+#day .fc{
+    width: 700px !important;
+
+}
+
 #day .fc .fc-timegrid-slot-minor,
 #day .fc .fc-timegrid-slot,
 #day .fc .fc-timegrid-now-indicator-container,
@@ -301,4 +306,4 @@
   
 #week .fc-direction-ltr .fc-daygrid-event .fc-event-time{
     margin-top: 15px !important;
-} 
+}
