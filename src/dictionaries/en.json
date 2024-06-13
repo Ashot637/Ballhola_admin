@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "features": "Features",
+    "demo": "Demonstration",
+    "reviews": "Reviews",
+    "download": "Download",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "discover": "Discover all about Football with US",
+    "our": "Our",
+    "app": "football app",
+    "connects": "",
+    "players": "connects players for ",
+    "matches": "exciting matches",
+    "welcome": "Welcome to the ultimate football experience at BallHola!",
+    "ready": "Ready to play? Let's start."
+  },
+  "video": {
+    "videoTitle": "The video demonstration of US"
+  },
+  "features": {
+    "featuresTitle": "What will you get?",
+    "chat": "Chat with players",
+    "game": "Create a game",
+    "stadiums": "Find nearby stadiums",
+    "invitation": "Receive invitations"
+  },
+  "reviews": {
+    "title": "Satisfied Users are Our best Ads!"
+  },
+  "banner": {
+    "bannerTitle1": "Life is all about Sport",
+    "bannerDescription1": "Find out about BallHola, a great way of staying on top of your favourite sport events!",
+    "bannerTitle2": "So what are you waiting for?",
+    "bannerDescription2": "Choose your native platform and get started!"
+  },
+  "contact": {
+    "info": "Contact information",
+    "phonenumber": "Give Us a Call",
+    "message": "Send Us a Message",
+    "sm": "Social Media",
+    "form": "Contact Us",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter a valid email address",
+    "messagePlaceholder": "Enter your message",
+    "submit": "Submit",
+    "invalidEmail": "Please enter a valid email address",
+    "toaster": "Submitted"
+  },
+  "footer": {
+    "rights": "© 2024 BallHola All rights reserved"
+  }
+}

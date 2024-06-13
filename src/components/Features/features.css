@@ -1,0 +1,319 @@
+.features {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    /*border: 1px solid aquamarine;*/
+}
+
+.features__title {
+    font-size: var(--size-24);
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.48px;
+}
+
+.wave {
+    display: none;
+}
+
+.features__icon-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    width: 390px;
+    height: 320px;
+    margin-top: 30px;
+    /*border: 1px solid peachpuff;*/
+}
+
+.features__icon {
+    width: 74px;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.features__vector {
+    z-index: 20;
+    position: absolute;
+    top: 45%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+
+}
+
+.chat {
+    height: 43px;
+    width: 40px;
+}
+
+.stadium {
+    height: 38px;
+    width: 37px;
+}
+
+.invitation {
+    height: 42px;
+    width: 42px;
+}
+
+.paper {
+    height: 31px;
+    width: 34px;
+}
+
+.pencil {
+    top: 36%;
+    left: 60%;
+    height: 26px;
+    width: 25px;
+}
+
+.features__rectangle {
+    left: 5px;
+    width: 74px;
+    height: 74px;
+    z-index: 10;
+    position: absolute;
+}
+
+.features__icon-text-group {
+    height: 130px;
+    width: 166px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.features__icon-description {
+    font-size: var(--size-16);
+    line-height: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+/* xs */
+
+@media (min-width: 475px) {}
+
+/* sm */
+
+@media (min-width: 640px) {
+    .features {
+        height: 190px;
+    }
+
+    .features__icon-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        /*background-image: url('/public/wave.svg');*/
+        /*background-size: cover;*/
+        /*background-position: center;*/
+        /*background-repeat: no-repeat;*/
+    }
+
+    .features__icon {
+        width: 83px;
+        height: 83px;
+    }
+
+    /*.features__vector {*/
+    /*    top: 45%;*/
+    /*    left: 47%;*/
+    /*}*/
+
+    .wave {
+        display: block;
+        z-index: 5;
+        position: absolute;
+        width: 100vw;
+        /*max-width: 640px;*/
+        min-height: 82px;
+    }
+    .chat {
+        left: 53%;
+        height: 42px;
+        width: 45px;
+    }
+
+    .stadium {
+        top: 43%;
+        left: 53%;
+        height: 35.78px;
+        width: 36.57px;
+    }
+
+    .invitation {
+        top: 43%;
+        left: 53%;
+        height: 40px;
+        width: 40px;
+    }
+
+    .paper {
+        height: 32.78px;
+        width: 35.3px;
+    }
+
+    .pencil {
+        height: 26.38px;
+        width: 26.25px;
+    }
+
+    .features__rectangle {
+        width: 83px;
+        height: 83px;
+    }
+
+    .features__icon-text-group {
+        height: 128px;
+        width: 166px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        /*border: 1px solid white;*/
+    }
+
+    .features__icon-description {
+        font-size: var(--size-15);
+        line-height: 20px;
+    }
+}
+
+/* md */
+
+@media (min-width: 768px) {
+
+}
+
+/* lg */
+
+@media (min-width: 1024px) {
+    .features {
+        height: 343px;
+        margin-top: 40px;
+    }
+
+    .features__title {
+        font-size: var(--size-36);
+        line-height: 40px;
+        letter-spacing: -0.72px;
+    }
+
+    /*.features__icon-container {*/
+    /*    display: flex;*/
+    /*    flex-direction: row;*/
+    /*    flex-wrap: nowrap;*/
+    /*    justify-content: space-evenly;*/
+    /*    width: inherit;*/
+    /*}*/
+
+    .features__icon {
+        width: 150px;
+        height: 150px;
+    }
+
+    /*.features__vector {*/
+    /*    top: 45%;*/
+    /*    left: 47%;*/
+    /*}*/
+
+    .chat {
+        left: 50%;
+        height: 80px;
+        width: 84px;
+    }
+
+    .wave {
+        /*!*max-width: 1024px;*!*/
+        min-height: 152px;
+    }
+
+    .stadium {
+        top: 43%;
+        left: 50%;
+        height: 65px;
+        width: 64px;
+    }
+
+    .invitation {
+        top: 43%;
+        left: 50%;
+        height: 74px;
+        width: 74px;
+    }
+
+    .paper {
+        left: 48%;
+        height: 59px;
+        width: 64px;
+    }
+
+    .pencil {
+        left: 55%;
+        height: 47px;
+        width: 47px;
+    }
+
+    .features__rectangle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .features__icon-text-group {
+        height: 230px;
+        width: 256px;
+        display: flex;
+    }
+
+    .features__icon-description {
+        font-size: var(--size-24);
+        line-height: 30px;
+    }
+}
+
+/* xl */
+
+@media (min-width: 1280px) {
+
+    .features {
+        margin-top: 80px;
+    }
+
+    .features__title {
+        font-size: var(--size-48);
+        line-height: 60px;
+        letter-spacing: -0.96px;
+    }
+
+    /*.wave {*/
+    /*    max-width: 1280px;*/
+    /*}*/
+}
+
+@media (min-width: 1440px) {
+    /*.wave {*/
+    /*    max-width: 1440px;*/
+    /*}*/
+}
+
+/* 2xl */
+
+@media (min-width: 1536px) {
+    /*.wave {*/
+    /*    max-width: 1536px;*/
+    /*}*/
+}

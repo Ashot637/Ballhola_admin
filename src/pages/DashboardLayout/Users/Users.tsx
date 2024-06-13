@@ -57,7 +57,6 @@ const Users = () => {
     <div className="h-max">
       <Title />
 
-      <div className="h-max pb-65">
         <Table
           columns={columns}
           rows={rows}
@@ -66,7 +65,6 @@ const Users = () => {
             navigate(`${item.id}`);
           }}
         />
-      </div>
     </div>
   );
 };

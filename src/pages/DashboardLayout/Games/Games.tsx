@@ -36,7 +36,6 @@ const Games = () => {
   };
 
   const renderEditCell = (params: GridRenderCellParams) => {
-    console.log(params.id);
     return (
       <div className="flex jst-end cp">
         <MdEdit
@@ -73,7 +72,7 @@ const Games = () => {
       headerName: 'Stadium Name',
       width: 250,
       renderCell: (params) => (
-        <Link to={`/dashboard/stadiums/${params.row.stadionId}/edit`}>{params.value}</Link>
+        <Link to={`/admin/dashboard/stadiums/${params.row.stadionId}/edit`}>{params.value}</Link>
       ),
     },
     { field: 'startTime', headerName: 'Start Time', width: 150 },

@@ -15,41 +15,41 @@ import { selectAuth } from "../../store/authSlice";
 const MENU: IMenuItem[] = [
   {
     tilte: "Dashboard",
-    link: "/dashboard",
+    link: "admin/dashboard",
     Icon: MdSpaceDashboard,
     disabledForBoth: true
   },
   {
     tilte: "Calendar",
-    link: "/dashboard/calendar",
+    link: "calendar",
     Icon: MdCalendarMonth,
   },
   {
     tilte: "Games",
-    link: "/dashboard/games",
+    link: "games",
     Icon: GiSoccerBall,
   },
   {
     tilte: "Stadiums",
-    link: "/dashboard/stadiums",
+    link: "stadiums",
     Icon: GiSoccerField,
     disabled: true
   },
   {
     tilte: "Facilities",
-    link: "/dashboard/facilities",
+    link: "facilities",
     Icon: GiSoccerField,
     disabled: true
   },
   {
     tilte: "Users",
-    link: "/dashboard/users",
+    link: "users",
     Icon: CiUser,
-    removed: true,
+    disabledForBoth: true
   },
   {
     tilte: "Logout",
-    link: "/",
+    link: "/login",
     Icon: CiLogout,
   },
 ];

@@ -79,13 +79,13 @@ const NewGame: FC = () => {
     } else {
       await axios.patch("/game/update/" + id, data);
     }
-    navigate("/dashboard/games");
+    navigate("admin/dashboard/games");
   };
 
   return (
     <div className="h-max">
       <div className="flex c-gap-10 mb-15">
-        <Link to={"/dashboard/games"}>
+        <Link to={"admin/dashboard/games"}>
           <IoIosArrowRoundBack size={45} className={classes.icon} />
         </Link>
         <h2 className="title">{id ? "Edit Game" : "New Game"}</h2>

@@ -62,7 +62,7 @@ const NewFacilitie: FC = () => {
     } else {
       await axios.patch('/facilitie/update/' + id, formData);
     }
-    navigate('/dashboard/facilities');
+    navigate('admin/dashboard/facilities');
   };
 
   if (id && !imgUrl) {
@@ -72,7 +72,7 @@ const NewFacilitie: FC = () => {
   return (
     <div className="h-max">
       <div className="flex c-gap-10 mb-15">
-        <Link to={'/dashboard/stadiums'}>
+        <Link to={'/admin/dashboard/facilities'}>
           <IoIosArrowRoundBack size={45} className={classes.icon} />
         </Link>
         <h2 className="title">{id ? 'Edit Stadium' : 'New Stadium'}</h2>

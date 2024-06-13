@@ -21,7 +21,7 @@ const LoginPage: FC = () => {
   }
 
   if (user) {
-    return <Navigate to={"/dashboard/calendar"} replace={true} />;
+    return <Navigate to={"/admin/dashboard/games"} replace={true} />;
   }
 
   return (

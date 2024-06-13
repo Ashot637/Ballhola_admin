@@ -1,0 +1,234 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    height: 66px;
+}
+
+.header__menu {
+    display: none;
+}
+
+.header__btn {
+    display: none;
+    font-weight: 400;
+    gap: 10px;
+    border: 1px solid var(--clr-light);
+}
+
+#header__right {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hamburger {
+    position: relative;
+    margin-right: 20px;
+    /*right: 20px;*/
+    /*left: 115px;*/
+    /*top: 13px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /*width: 30px;*/
+    /*height: 16px;*/
+    cursor: pointer;
+    z-index: 90;
+
+    appearance: none;
+    outline: none;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--clr-dark-turquoise);
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    transition: 300ms ease-out;
+}
+
+.hamburger .bar {
+    width: 22px;
+}
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-6px, 4px);
+}
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-6px, -4px);
+}
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+
+.mobile-nav {
+    /*border: 1px solid white;*/
+    position: absolute;
+    top: 66px;
+    right: 0;
+    width: 100%;
+    height: 204px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    list-style: none;
+    row-gap: 12px;
+    background-color: var(--clr-dark-blue);
+    opacity: 0;
+    padding: 10px 25px 18px 25px;
+    transition: 300ms ease-out;
+    z-index: 50;
+}
+
+.mobile-nav a {
+    font-size: var(--size-16);
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.mobile-nav.is-active {
+    opacity: 100;
+}
+
+.header__logo {
+    position: relative;
+    width: 49px;
+    height: 46px;
+    left: 19px;
+}
+
+/* xs */
+
+@media (min-width: 475px) {}
+
+/* sm */
+
+@media (min-width: 640px) {
+    .header {
+        justify-content: space-around;
+        height: 87px;
+    }
+
+    .header__menu {
+        display: flex;
+        align-items: center;
+        /*justify-content: space-between;*/
+        list-style: none;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .header__link {
+        font-size: var(--size-14);
+        line-height: 17.6px;
+    }
+
+    .header__link:hover {
+        cursor: pointer;
+        color: var(--clr-light-turquoise);
+    }
+
+    .contact_us {
+        color: var(--clr-light-turquoise);
+    }
+
+    .contact_us:hover {
+        text-decoration: underline;
+    }
+
+    .header__btn {
+        font-size: var(--size-12);
+        line-height: 15.08px;
+        display: inline-block;
+        border-radius: 18px;
+        padding: 6px 15px;
+        top: 29px;
+        right: 125px;
+    }
+
+    .header__btn:hover {
+        background: linear-gradient(265.73deg, #2A59D2 11%, #162E6C 84.45%);
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .header__logo {
+        width: 51px;
+        height: 46.88px;
+        /*top: 20.29px;*/
+        left:0;
+    }
+}
+
+/* md */
+
+@media (min-width: 768px) {
+    .header__menu {
+        gap: 35px;
+    }
+}
+
+/* lg */
+
+@media (min-width: 1024px) {
+    .header {
+        height: 60.39px;
+    }
+
+    .header__link {
+        font-size: var(--size-20);
+        line-height: 25.14px;
+    }
+
+    .header__btn {
+        font-size: var(--size-22);
+        line-height: 27.65px;
+        top: 46px;
+        left: 1200px;
+        padding: 10px 20px 10px 20px;
+        border-radius: 30px;
+    }
+
+    .header__logo {
+        width: 90px;
+        height: 84.39px;
+        /*top: 29.15px;*/
+        /*left: 100px;*/
+    }
+
+    .header__menu {
+        /*width: 616px;*/
+        gap: 40px;
+    }
+}
+
+/* xl */
+
+@media (min-width: 1280px) {
+    .header__menu {
+        gap: 80px;
+    }
+}
+
+/* 2xl */
+
+@media (min-width: 1440px) {
+    .header__menu {
+        gap: 120px;
+    }
+}

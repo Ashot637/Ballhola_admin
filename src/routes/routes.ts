@@ -4,6 +4,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import NewMatch from "../pages/DashboardLayout/Calendar/NewMatch/NewMatch";
 import MatchDetails from "../pages/DashboardLayout/Calendar/MatchDetails/MatchDetails";
 import Notifications from '../pages/DashboardLayout/Notificatons/Notifications';
+import LandingPage from "../pages/LandingPage/LandingPage";
 
 
 const DashboardLayout = lazy(
@@ -45,17 +46,20 @@ export interface IRoute {
 export const publicRoutes: IRoute[] = [
   {
     path: "/",
-    Element: LoginPage,
+    Element: LandingPage,
   },
+  {path: '/login',
+    Element: LoginPage
+  }
 ];
 
 export const adminRoutes: IRoute[] = [
   {
-    path: "dashboard",
+    path: "admin/dashboard",
     Element: DashboardLayout,
     children: [
       {
-        path: "",
+        path: "admin/dashboard",
         Element: Dashboard,
       },
       {

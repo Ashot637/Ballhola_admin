@@ -1,0 +1,354 @@
+
+/*background: #00000066;*/
+
+.banner {
+    height: 212px;
+    /*width: 390px;*/
+    margin-top: 20px;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.502); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure the overlay is above the image */
+}
+
+.banner__backdrop {
+    height: inherit;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    object-fit: cover;
+}
+
+.banner__top-bg {
+    width: 295px;
+    height: 73px;
+    top: 21px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 1;
+    border-radius: 0 10px 10px 0;
+}
+
+.banner__title, .banner__title-2 {
+    font-weight: 600;
+    font-size: var(--size-18);
+    line-height: 22px;
+    color: var(--clr-light-turquoise);
+    margin-top: 9px;
+    z-index: 10;
+    letter-spacing: -0.36px;
+}
+
+.banner__title {
+    margin-left: 20px;
+}
+
+.banner__title-2 {
+    margin-right: 20px;
+}
+
+.banner__description, .banner__description-2 {
+    font-size: var(--size-12);
+    line-height: 15px;
+    letter-spacing: -0.24px;
+    /*display: block;*/
+    width: fit-content;
+
+    /*border: 1px solid pink;*/
+}
+
+.banner__description {
+    margin-left: 20px;
+    /*width: 248px;*/
+}
+
+.banner__description-2 {
+    margin-right: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+.banner__bottom-bg {
+    width: 259px;
+    height: 89px;
+    top: 109px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    border-radius: 10px 0 0 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.banner-logo-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.banner__appstore-logo {
+    width: auto;
+    height: 25px;
+    cursor: pointer;
+}
+
+.banner__googleplay-logo {
+    width: auto;
+    height: 25px;
+    cursor: pointer;
+}
+
+@media (min-width: 390px) {}
+
+/* xs */
+
+@media (min-width: 475px) {}
+
+/* sm */
+
+@media (min-width: 640px) {
+
+    .banner {
+        height: 250px;
+    }
+
+    .banner__backdrop {
+        height: 250px;
+        width: 100%;
+    }
+
+}
+
+/* md */
+
+@media (min-width: 768px) {
+    .banner {
+        height: 306px;
+    }
+
+    .banner__backdrop {
+        height: 306px;
+    }
+
+    .banner__top-bg {
+        width: 734px;
+        height: 82px;
+        top: 40px;
+    }
+
+    .banner__title, .banner__title-2 {
+        font-weight: 700;
+        font-size: var(--size-24);
+        line-height: 30px;
+        margin-top: 11px;
+        letter-spacing: -0.48px;
+    }
+
+    .banner__title {
+        margin-left: 55px;
+    }
+
+    .banner__title-2 {
+        margin-right: 30px;
+    }
+
+    .banner__description, .banner__description-2 {
+        font-size: var(--size-20);
+        line-height: 25px;
+        letter-spacing: -0.4px;
+    }
+
+    .banner__description {
+        margin-left: 55px;
+        width: 100%;
+    }
+
+    .banner__description-2 {
+        margin-right: 30px;
+    }
+
+    .banner__bottom-bg {
+        width: 423px;
+        height: 126px;
+        top: 152px;
+    }
+
+    .banner-logo-container {
+        margin-right: 30px;
+    }
+    .banner__appstore-logo {
+        height: 36px;
+    }
+
+    .banner__googleplay-logo {
+        height: 36px;
+    }
+
+}
+
+/* lg */
+
+@media (min-width: 1024px) {
+    .banner {
+        height: 100%;
+    }
+
+    .banner__backdrop {
+        height: 100%;
+    }
+
+    .banner__top-bg {
+        width: 734px;
+        height: 82px;
+        top: 70px;
+    }
+
+    .banner__bottom-bg {
+        width: 423px;
+        height: 126px;
+        top: 202px;
+    }
+
+
+}
+
+/* xl */
+
+@media (min-width: 1280px) {
+    .banner__top-bg {
+        width: 900px;
+        height: 130px;
+        top: 70px;
+    }
+
+    .banner__title, .banner__title-2 {
+        font-size: var(--size-36);
+        line-height: 40px;
+        margin-top: 23px;
+        letter-spacing: -0.72px;
+    }
+
+    .banner__title {
+        margin-left: 70px;
+    }
+
+    .banner__title-2 {
+        margin-right: 70px;
+    }
+
+    .banner__description, .banner__description-2 {
+        font-size: var(--size-24);
+        line-height: 30px;
+        letter-spacing: -0.48px;
+    }
+
+    .banner__description {
+        margin-left: 70px;
+        width: 100%;
+    }
+
+    .banner__description-2 {
+        margin-right: 70px;
+    }
+
+    .banner__bottom-bg {
+        width: 578px;
+        height: 183px;
+        top: 270px;
+    }
+
+    .banner-logo-container {
+        margin-right: 70px;
+        gap: 20px;
+    }
+
+    .banner__appstore-logo {
+        height: 39px;
+    }
+
+    .banner__googleplay-logo {
+        height: 39px;
+    }
+
+}
+
+/* 2xl */
+
+@media (min-width: 1440px) {
+    .banner {
+        height: 100%;
+    }
+
+    .banner__backdrop {
+        height: 100%;
+    }
+
+    .banner__top-bg {
+        width: 808px;
+        height: 207px;
+        top: 60px;
+    }
+
+    .banner__title, .banner__title-2 {
+        font-size: var(--size-48);
+        line-height: 60px;
+        margin-top: 23px;
+        letter-spacing: -0.96px;
+    }
+
+    .banner__title {
+        margin-left: 80px;
+    }
+
+    .banner__title-2 {
+        margin-right: 90px;
+    }
+
+    .banner__description, .banner__description-2 {
+        font-size: var(--size-36);
+        line-height: 45px;
+        letter-spacing: -0.72px;
+    }
+
+    .banner__description {
+        margin-left: 80px;
+        width: 700px;
+    }
+
+    .banner__description-2 {
+        margin-right: 90px;
+    }
+
+    .banner__bottom-bg {
+        width: 808px;
+        height: 233px;
+        top: 320px;
+    }
+
+    .banner-logo-container {
+        margin-right: 90px;
+        gap: 30px;
+    }
+
+    .banner__appstore-logo {
+        height: 69px;
+    }
+
+    .banner__googleplay-logo {
+        height: 69px;
+    }
+
+}
+

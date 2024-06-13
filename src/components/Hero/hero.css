@@ -1,0 +1,360 @@
+.hero {
+    height: 476px;
+    display: flex;
+    position: relative;
+    flex-direction: column-reverse;
+}
+
+.hero__logo-container {
+    width: fit-content;
+    margin-left: 20px;
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.hero__text__1, .hero__text__3 {
+    display: none;
+}
+
+.hero__text__2 {
+    font-size: var(--size-24);
+    font-weight: 700;
+    line-height: 30.17px;
+    letter-spacing: -0.48px;
+    margin-left: 20px;
+    width: 284px;
+}
+
+.hero__image-container {
+    display: flex;
+    position: relative;
+    width: 380.94px;
+    height: 281.95px;
+    margin-top: 20px;
+    margin-left: 3px;
+}
+
+.hero__player-image {
+    width: 298.88px;
+    height: 212.99px;
+    rotateY: -180deg;
+    z-index: 10;
+}
+
+.hero__phone-image {
+    width: 248.22px;
+    height: 253.42px;
+    position: absolute;
+    z-index: 8;
+    top: 8.87px;
+    left: 135.72px;
+}
+
+.hero__googleplay-logo {
+    width: 122px;
+    height: 39px;
+    cursor: pointer;
+}
+
+.hero__appstore-logo {
+    width: 112px;
+    height: 39px;
+    cursor: pointer;
+}
+/* xs */
+
+@media (min-width: 390px) {}
+
+/* sm */
+
+@media (min-width: 640px) {
+
+    .hero {
+        height: 300px;
+        flex-direction: row;
+    }
+
+    .hero__logo-container {
+        margin-left: 0;
+        gap: 15px;
+    }
+
+    .hero__text-container {
+        width: 280px;
+        height: 173px;
+        margin-top: 24px;
+        margin-left: 33px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 15;
+    }
+
+    .hero__text__1 {
+        margin-top: 6px;
+        display: block;
+        font-size: var(--size-14);
+        line-height: 17.6px;
+    }
+
+
+    .hero__text__2 {
+        position: relative;
+        top: 5px;
+        margin-left: 0;
+        display: block;
+        width: inherit;
+    }
+
+    .hero__text__3 {
+        display: block;
+        font-size: var(--size-15);
+        line-height: 18.86px;
+        width: 400px;
+        margin-top: 10px;
+    }
+
+    .hero__image-container {
+        width: 430px;
+        height: 323.96px;
+        margin-top: 24px;
+    }
+
+    .hero__player-image {
+        width: 250.23px;
+    }
+
+    .hero__phone-image {
+        /*width: 193px;*/
+        width: 298px;
+        height: 212px;
+        position: relative;
+        z-index: 8;
+        top: 20px;
+        left: -150px;
+    }
+
+    .hero__appstore-logo {
+        width: 77px;
+        height: 26px;
+    }
+
+    .hero__googleplay-logo {
+        width: 83px;
+        height: 26px;
+    }
+
+
+}
+
+/* md */
+
+@media (min-width: 768px) {
+
+    .hero {
+        height: 330px;
+    }
+
+    .hero__text-container {
+        width: 278px;
+        height: 173px;
+        margin-top: 24px;
+        margin-left: 40px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 15;
+    }
+
+    .hero__player-image {
+        width: 334.23px;
+        height: 244.72px;
+    }
+
+    .hero__phone-image {
+        width: 277.58px;
+        height: 291.18px;
+        position: relative;
+        z-index: 8;
+        top: 10.2px;
+        left: -188px;
+    }
+}
+
+/* lg */
+
+@media (min-width: 1024px) {
+    .hero {
+        height: 400px;
+        top: 32px;
+    }
+
+    .hero__text-container {
+        width: 450px;
+        height: 334px;
+        margin-left: 80px;
+    }
+
+    .hero__text__1 {
+        font-size: var(--size-22);
+        line-height: 31px;
+    }
+
+
+    .hero__text__2 {
+        top: 10px;
+        margin-left: 0;
+        font-size: var(--size-36);
+        line-height: 39px;
+    }
+
+    .hero__text__3 {
+        font-size: var(--size-20);
+        line-height: 22px;
+        width: 600px;
+        margin-top: 20px;
+    }
+
+    .hero__image-container {
+        margin-top: 24px;
+    }
+
+    .hero__appstore-logo {
+        width: 117px;
+        height: 57px;
+    }
+
+    .hero__googleplay-logo {
+        width: 124px;
+        height: 57px;
+    }
+}
+
+/* xl */
+
+@media (min-width: 1280px) {
+    .hero {
+        top: 80px;
+        height: 500px;
+    }
+
+    .hero__text-container {
+        width: 550px;
+        height: 334px;
+        margin-left: 80px;
+    }
+
+    .hero__text__1 {
+        font-size: var(--size-24);
+        line-height: 40.22px;
+    }
+
+
+    .hero__text__2 {
+        top: 10px;
+        margin-left: 0;
+        font-size: var(--size-36);
+        line-height: 40px;
+    }
+
+    .hero__text__3 {
+        font-size: var(--size-22);
+        line-height: 30.17px;
+        width: 600px;
+        margin-top: 20px;
+    }
+
+    .hero__image-container {
+        width: 699.64px;
+        height: 531.87px;
+        margin-top: 25px;
+        /*margin-left: 3px;*/
+    }
+
+    .hero__player-image {
+        width: 488.73px;
+        height: 341.78px;
+        }
+
+    .hero__phone-image {
+        width: 395.73px;
+        height: 418.05px;
+        position: relative;
+        z-index: 8;
+        top: 10.2px;
+        left: -270px;
+    }
+
+    .hero__appstore-logo {
+        width: 165px;
+        height: 57px;
+    }
+
+    .hero__googleplay-logo {
+        width: 178px;
+        height: 57px;
+    }
+}
+
+/* 2xl */
+
+@media (min-width: 1440px) {
+    .hero {
+        top: 100px;
+        height: 580px;
+    }
+
+    .hero__text-container {
+        width: 655px;
+        height: 334px;
+        margin-left: 80px;
+    }
+
+    .hero__text__1 {
+        font-size: var(--size-32);
+        line-height: 40.22px;
+    }
+
+
+    .hero__text__2 {
+        top: 10px;
+        margin-left: 0;
+        font-size: var(--size-54);
+        line-height: 67.88px;
+    }
+
+    .hero__text__3 {
+        font-size: var(--size-24);
+        line-height: 30.17px;
+        width: 600px;
+        margin-top: 20px;
+    }
+
+    .hero__player-image {
+        width: 548px;
+        height: 401px;
+    }
+
+    .hero__phone-image {
+        width: 455px;
+        height: 478px;
+        top: 20.2px;
+        left: -300px;
+    }
+
+    .hero__appstore-logo {
+        width: 165px;
+        height: 57px;
+    }
+
+    .hero__googleplay-logo {
+        width: 178px;
+        height: 57px;
+    }
+}
+
+@media (min-width: 1470px) {
+
+}

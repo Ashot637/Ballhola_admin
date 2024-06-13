@@ -1,0 +1,124 @@
+#lng-switcher-container {
+    position: relative;
+    width: 58px;
+}
+
+#lng-switcher-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#lng-globe {
+    width: 22px;
+    height: 22px;
+}
+
+#lng-arrow {
+    display: none;
+}
+
+#lng-globe.is-active {
+    filter: grayscale(100%) brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(90deg) brightness(100%);
+}
+
+#lng-dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    background-color: var(--clr-dark-blue);
+    opacity: 0;
+    transition: 300ms ease-out;
+    width: 58px;
+    height: 118px;
+    top: 27px;
+    left: 0;
+    z-index: 99;
+}
+
+#lng-dropdown.is-active {
+    opacity: 100;
+}
+
+
+.lng-options {
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+}
+
+.lng-options:hover {
+   color: var(--clr-light-turquoise);
+    cursor: pointer;
+}
+/* xs */
+
+@media (min-width: 475px) {}
+
+/* sm */
+
+@media (min-width: 640px) {
+    #lng-switcher-container {
+        width: 70px;
+    }
+
+    #lng-globe {
+        width: 28px;
+        height: 28px;
+    }
+
+    #lng-arrow {
+        display: inline;
+        width: 13px;
+        height: 6px;
+        transition: transform 300ms ease-out;
+    }
+
+    #lng-arrow.is-active {
+        transform: rotate(-180deg);
+        filter: grayscale(100%) brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(90deg) brightness(100%);
+    }
+
+
+    #lng-dropdown {
+        align-items: center;
+        width: 70px;
+        height: 118px;
+        top: 33px;
+    }
+}
+
+/* md */
+
+@media (min-width: 768px) {}
+
+/* lg */
+
+@media (min-width: 1024px) {
+    #lng-switcher-container {
+        width: 70px;
+    }
+
+    #lng-globe {
+        width: 40px;
+        height: 40px;
+    }
+
+    #lng-dropdown {
+        top: 45px;
+    }
+}
+
+/* xl */
+
+@media (min-width: 1280px) {}
+
+/* 2xl */
+
+@media (min-width: 1440px) {}

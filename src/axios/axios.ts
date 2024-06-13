@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "http://64.226.91.104/";
+export const BASE_URL = "https://ballhola.app/service/";
 
 const instance = axios.create({
   baseURL: `${BASE_URL}api/v2`,
