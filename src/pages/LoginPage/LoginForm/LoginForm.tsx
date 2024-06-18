@@ -7,16 +7,23 @@ import { fetchLogin, selectAuth } from '../../../store/authSlice';
 
 import Button from '../../../UI/Button/Button';
 import Input from '../../../UI/Input/Input';
+import Spinner from '../../../UI/Spinner/Spinner';
+import { STATUS } from '../../../types/Status';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const { user, status } = useSelector(selectAuth);
+
   const dispatch = useAppDispatch();
   const { isInvalid } = useSelector(selectAuth);
   const [phone, setPhone] = useState<string>('');
+  const navigate = useNavigate()
   const [password, setPassword] = useState<string>('');
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await dispatch(fetchLogin({ password, phone }));
+    navigate('/admin/dashboard/games')
     setPassword('');
     setPhone('');
   };

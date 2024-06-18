@@ -11,18 +11,6 @@ import LoginForm from "./LoginForm/LoginForm";
 import Spinner from "../../UI/Spinner/Spinner";
 
 const LoginPage: FC = () => {
-  const { user, status } = useSelector(selectAuth);
-
-  if (
-    (status === STATUS.LOADING || status === STATUS.WAITING) &&
-    localStorage.getItem("accessToken")
-  ) {
-    return <Spinner />;
-  }
-
-  if (user) {
-    return <Navigate to={"/admin/dashboard/games"} replace={true} />;
-  }
 
   return (
     <div
