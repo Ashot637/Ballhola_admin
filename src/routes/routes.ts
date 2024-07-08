@@ -6,6 +6,10 @@ import MatchDetails from "../pages/DashboardLayout/Calendar/MatchDetails/MatchDe
 import Notifications from "../pages/DashboardLayout/Notificatons/Notifications";
 import LandingPage from "../pages/LandingPage/LandingPage";
 
+import { useSelector } from "react-redux";
+import { selectAuth } from "../store/authSlice";
+import AdminPage from "../pages/AdminPage";
+
 const DashboardLayout = lazy(
   () => import("../pages/DashboardLayout/DashboardLayout")
 );
@@ -47,8 +51,8 @@ export const publicRoutes: IRoute[] = [
     path: "/",
     Element: LandingPage,
   },
+  { path: "admin", Element: AdminPage },
   { path: "admin/login", Element: LoginPage },
-
 ];
 
 export const adminRoutes: IRoute[] = [

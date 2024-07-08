@@ -2,8 +2,9 @@ import { useEffect, type FC, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { adminRoutes, publicRoutes } from '../routes/routes';
 import ProtectedRoute from '../routes/ProtectedRoute';
-import { fetchAuthMe } from '../store/authSlice';
+import { fetchAuthMe, selectAuth } from '../store/authSlice';
 import { useAppDispatch } from '../store/store';
+import { useSelector } from 'react-redux';
 
 
 const App: FC = () => {
@@ -15,6 +16,8 @@ const App: FC = () => {
     }
   }, [dispatch]);
 
+  const { user, status } = useSelector(selectAuth);
+
 
   return (
     <div className="container h-100">
@@ -25,7 +28,7 @@ const App: FC = () => {
         })}
 
         <Route path="/" element={<ProtectedRoute />}>
-          {adminRoutes.map(({ path, Element, children }) => {
+          {user && adminRoutes.map(({ path, Element, children }) => {
             if (children?.length) {
               return (
                 <Route key={path} path={path} element={<Element />}>

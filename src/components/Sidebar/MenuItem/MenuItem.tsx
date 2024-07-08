@@ -48,7 +48,7 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
           )
         }
         onClick={() => {
-          if (item.link === "/") {
+          if (item.link === "/admin/login") {
             dispatch(logout());
           }
         }}
