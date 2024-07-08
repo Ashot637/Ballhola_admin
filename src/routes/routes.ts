@@ -3,9 +3,8 @@ import { lazy, type FC } from "react";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import NewMatch from "../pages/DashboardLayout/Calendar/NewMatch/NewMatch";
 import MatchDetails from "../pages/DashboardLayout/Calendar/MatchDetails/MatchDetails";
-import Notifications from '../pages/DashboardLayout/Notificatons/Notifications';
+import Notifications from "../pages/DashboardLayout/Notificatons/Notifications";
 import LandingPage from "../pages/LandingPage/LandingPage";
-
 
 const DashboardLayout = lazy(
   () => import("../pages/DashboardLayout/DashboardLayout")
@@ -48,9 +47,8 @@ export const publicRoutes: IRoute[] = [
     path: "/",
     Element: LandingPage,
   },
-  {path: '/login',
-    Element: LoginPage
-  }
+  { path: "admin/login", Element: LoginPage },
+
 ];
 
 export const adminRoutes: IRoute[] = [

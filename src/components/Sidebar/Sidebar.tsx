@@ -49,7 +49,7 @@ const MENU: IMenuItem[] = [
   },
   {
     tilte: "Logout",
-    link: "/login",
+    link: "/admin/login",
     Icon: CiLogout,
   },
 ];
