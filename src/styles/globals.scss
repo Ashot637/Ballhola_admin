@@ -24,7 +24,8 @@ body {
 
   &::-webkit-scrollbar-thumb {
     border: 2px solid var(--color-bg);
-    background: var(--color-dark);
+    //background: var(--color-dark);
+    background: var(--clr-light);
     border-radius: 10px;
   }
 }
