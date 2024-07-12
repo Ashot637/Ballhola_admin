@@ -203,6 +203,7 @@ function Contact() {
                         placeholder={t('contact.messagePlaceholder')}
                         value={messageInputValue}
                         onChange={handleMessageInputChange}
+                        maxLength={270}
                      />
 
                      <button
