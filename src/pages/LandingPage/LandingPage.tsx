@@ -35,9 +35,9 @@ export default function LandingPage() {
             <Features />
          </div>
 
-         <div ref={reviewsRef}>
+         {/* <div ref={reviewsRef}>
             <CustomSlider />
-         </div>
+         </div> */}
          <div ref={downloadRef}>
             <Banner />
          </div>

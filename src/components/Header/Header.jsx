@@ -28,10 +28,10 @@ function Header({refs}) {
                {/*<li>*/}
                {/*   <a className='header__link' href='#demo' onClick={() => scrollToSection(refs.demoRef)}>{dict.nav.demo}</a>*/}
                {/*</li>*/}
-               <li>
+               {/* <li>
                   <a className='header__link' href='#reviews'
                      onClick={() => scrollToSection(refs.reviewsRef)}>{t('nav.reviews')}</a>
-               </li>
+               </li> */}
                <li>
                   <a className='header__link' href='#download'
                      onClick={() => scrollToSection(refs.downloadRef)}>{t('nav.download')}</a>
@@ -58,9 +58,9 @@ function Header({refs}) {
             {/*<li>*/}
             {/*   <a href='#demo' onClick={() => scrollToSection(refs.demoRef)}>{dict.nav.demo}</a>*/}
             {/*</li>*/}
-            <li>
+            {/* <li>
                <a href='#reviews' onClick={() => scrollToSection(refs.reviewsRef)}>{t('nav.reviews')}</a>
-            </li>
+            </li> */}
             <li>
                <a href='#download' onClick={() => scrollToSection(refs.downloadRef)}>{t('nav.download')}</a>
             </li>

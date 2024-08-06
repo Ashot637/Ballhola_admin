@@ -12,12 +12,12 @@ function Hero() {
    return (<>
       <div className='hero'>
          <div className='hero__text-container'>
-            <div className='hero__text__1'>
+            {/* <div className='hero__text__1'>
                {t('hero.discover')}
-            </div>
+            </div> */}
             <div className='hero__text__2'>
-               {t('hero.our')} <span>{t('hero.app')}</span> {t('hero.connects')} <br/>
-               {t('hero.players')} <span> {t('hero.matches')}</span>
+                <span>{t('hero.app')}</span> {t('hero.connects')} 
+               {t('hero.players')}<br/><span> {t('hero.matches')}</span>
             </div>
             <div className='hero__text__3'>
                {t('hero.welcome')}
