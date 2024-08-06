@@ -33,15 +33,15 @@ function Footer({ refs }) {
                 {t("nav.features")}
               </a>
             </li>
-            <li>
-              <a
-                className="footer__link"
-                href="#reviews"
-                onClick={() => scrollToSection(refs.reviewsRef)}
-              >
-                {t("nav.reviews")}
-              </a>
-            </li>
+            {/*<li>*/}
+            {/*  <a*/}
+            {/*    className="footer__link"*/}
+            {/*    href="#reviews"*/}
+            {/*    onClick={() => scrollToSection(refs.reviewsRef)}*/}
+            {/*  >*/}
+            {/*    {t("nav.reviews")}*/}
+            {/*  </a>*/}
+            {/*</li>*/}
             <li>
               <a
                 className="footer__link"
