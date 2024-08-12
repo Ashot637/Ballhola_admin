@@ -45,6 +45,15 @@ function Footer({ refs }) {
             <li>
               <a
                 className="footer__link"
+                href="#demo"
+                onClick={() => scrollToSection(refs.demoRef)}
+              >
+                {t("nav.demo")}
+              </a>
+            </li>
+            <li>
+              <a
+                className="footer__link"
                 href="#download"
                 onClick={() => scrollToSection(refs.downloadRef)}
               >
