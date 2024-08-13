@@ -54,16 +54,32 @@ const Games = () => {
     mutate();
   };
 
-  const rows: GridRowsProp = data.map((game: IGame) => ({
+ 
+  
+  // const rows: GridRowsProp = data.map((game: IGame) => ({
+  //   id: game.id,
+  //   price: game.price,
+  //   stadionName: game.stadion.title_en,
+  //   startTime: formatDate(game.startTime),
+  //   endTime: formatDate(game.endTime),
+  //   playersCount: game.playersCount + '/' + game.maxPlayersCount,
+  //   stadionId: game.stadion.id,
+  //   available: dayjs(game.startTime).isAfter(dayjs()) ? '🟢' : '🔴',
+  // }));
+
+  const rows: GridRowsProp = data
+  .map((game: IGame) => ({
     id: game.id,
     price: game.price,
-    stadionName: game.stadion.title_en,
+    stadiumName: game.stadion.title_en,
     startTime: formatDate(game.startTime),
     endTime: formatDate(game.endTime),
     playersCount: game.playersCount + '/' + game.maxPlayersCount,
-    stadionId: game.stadion.id,
+    stadiumId: game.stadion.id,
     available: dayjs(game.startTime).isAfter(dayjs()) ? '🟢' : '🔴',
-  }));
+  }))
+  .sort((a, b) => (a.available === '🟢' && b.available !== '🟢' ? -1 : 1));
+
 
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 50 },

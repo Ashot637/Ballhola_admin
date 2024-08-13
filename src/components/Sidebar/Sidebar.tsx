@@ -64,7 +64,7 @@ const Sidebar: FC = () => {
     <aside className={classes.sidebar}>
       <ul className={classes.menu}>
         {user?.role == "STADION_OWNER" && (
-          <NavLink to={"/dashboard/notifications"}>
+          <NavLink to={"/admin/dashboard/notifications"}>
             <div className={classes.notification}>
               {count > 0 && <div className={classes.number}>{count}</div>}
             </div>
@@ -85,3 +85,4 @@ const Sidebar: FC = () => {
 };
 
 export default Sidebar;
+
