@@ -1,5 +1,6 @@
 import { useState, useEffect, type FC, type FormEvent } from "react";
 import classes from "./newGame.module.scss";
+import { TextField } from '@mui/material';
 
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -79,13 +80,13 @@ const NewGame: FC = () => {
     } else {
       await axios.patch("/game/update/" + id, data);
     }
-    navigate("admin/dashboard/games");
+    navigate("/admin/dashboard/games");
   };
 
   return (
     <div className="h-max">
       <div className="flex c-gap-10 mb-15">
-        <Link to={"admin/dashboard/games"}>
+        <Link to={"/admin/dashboard/games"}>
           <IoIosArrowRoundBack size={45} className={classes.icon} />
         </Link>
         <h2 className="title">{id ? "Edit Game" : "New Game"}</h2>
@@ -113,6 +114,8 @@ const NewGame: FC = () => {
               displayEmpty
               onChange={(e) => setSelectedStaion(e.target.value)}
               inputProps={{ "aria-label": "Without label" }}
+              style={{ color: 'rgba(254, 254, 254, 0.816) ' }}
+      
             >
               {stadions.map((stadion, index: number) => (
                 <MenuItem key={index} value={stadion.title_en}>
@@ -127,7 +130,28 @@ const NewGame: FC = () => {
               ampm={false}
               value={startTime}
               onChange={(newValue) => setStartTime(newValue)}
-              className="custom-datetime-picker"
+              className="custom-datetime-picker, inputStyle "
+              sx={{
+                '& .MuiInputBase-input::placeholder': {
+                  color: 'rgba(254, 254, 254, 0.816)',
+                },
+                '& .MuiInputBase-input': {
+                  color: 'rgba(254, 254, 254, 0.816)',
+                },
+                '& .Mui-focused .MuiInputBase-input::placeholder': {
+                  color: 'rgba(254, 254, 254, 0.816)',
+                },
+                // '& .MuiInput-underline:before': {
+                //   borderBottom: '1px solid white',
+                // },
+                // '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
+                // },
+                // '& .MuiInput-underline:after': {
+                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
+                // },
+              }}
+            
             />
           </LocalizationProvider>
           <label className={classes.label}>End time</label>
@@ -137,6 +161,26 @@ const NewGame: FC = () => {
               value={endTime}
               onChange={(newValue) => setEndTime(newValue)}
               className="custom-datetime-picker"
+              sx={{
+                '& .MuiInputBase-input::placeholder': {
+                  color: 'rgba(254, 254, 254, 0.816)',
+                },
+                '& .MuiInputBase-input': {
+                  color: 'rgba(254, 254, 254, 0.816)',
+                },
+                '& .Mui-focused .MuiInputBase-input::placeholder': {
+                  color: 'rgba(254, 254, 254, 0.816)',
+                },
+                // '& .MuiInput-underline:before': {
+                //   borderBottom: '1px solid white',
+                // },
+                // '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
+                // },
+                // '& .MuiInput-underline:after': {
+                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
+                // },
+              }}
             />
           </LocalizationProvider>
           <Button
