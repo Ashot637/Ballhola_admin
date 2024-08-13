@@ -91,7 +91,6 @@
 // export const { logout } = authSlice.actions;
 
 
-
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from '../axios/axios';
 
@@ -114,9 +113,9 @@ export const fetchLogin = createAsyncThunk<IUser, ILogin>(
         localStorage.setItem('user', JSON.stringify(data));
         return data;
       }
-      return thunkAPI.rejectWithValue('');
+      return thunkAPI.rejectWithValue('Invalid user role');
     } catch (error) {
-      return thunkAPI.rejectWithValue('');
+      return thunkAPI.rejectWithValue('Login failed');
     }
   }
 );
@@ -131,9 +130,9 @@ export const fetchAuthMe = createAsyncThunk<IUser, void>(
         localStorage.setItem('user', JSON.stringify(data));
         return data;
       }
-      return thunkAPI.rejectWithValue('');
+      return thunkAPI.rejectWithValue('Invalid user role');
     } catch (error) {
-      return thunkAPI.rejectWithValue('');
+      return thunkAPI.rejectWithValue('Failed to fetch user data');
     }
   }
 );
@@ -170,6 +169,7 @@ const authSlice = createSlice({
       localStorage.removeItem('accessToken');
       localStorage.removeItem('user');
       state.user = null;
+      state.status = STATUS.WAITING;
     },
   },
   extraReducers: (builder) => {
@@ -189,7 +189,6 @@ const authSlice = createSlice({
       state.status = STATUS.LOADING;
     });
     builder.addCase(fetchAuthMe.pending, (state) => {
-      state.user = null;
       state.status = STATUS.LOADING;
     });
     builder.addCase(fetchAuthMe.fulfilled, (state, action) => {
