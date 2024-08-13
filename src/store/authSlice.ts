@@ -91,6 +91,7 @@
 // export const { logout } = authSlice.actions;
 
 
+
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from '../axios/axios';
 
@@ -106,27 +107,35 @@ interface ILogin {
 export const fetchLogin = createAsyncThunk<IUser, ILogin>(
   'auth/fetchLogin',
   async (params, thunkAPI) => {
-    const { data } = await axios.post('/auth/login', { ...params });
-    if (data?.role === 'ADMIN' || data?.role === 'STADION_OWNER') {
-      localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('user', JSON.stringify(data));
-      return data;
+    try {
+      const { data } = await axios.post('/auth/login', { ...params });
+      if (data?.role === 'ADMIN' || data?.role === 'STADION_OWNER') {
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('user', JSON.stringify(data));
+        return data;
+      }
+      return thunkAPI.rejectWithValue('');
+    } catch (error) {
+      return thunkAPI.rejectWithValue('');
     }
-    return thunkAPI.rejectWithValue('');
-  },
+  }
 );
 
 export const fetchAuthMe = createAsyncThunk<IUser, void>(
   'auth/fetchAuthMe',
   async (_, thunkAPI) => {
-    const { data } = await axios.get<IUser>('/auth');
-    if (data?.role === 'ADMIN' || data?.role === 'STADION_OWNER') {
-      localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('user', JSON.stringify(data));
-      return data;
+    try {
+      const { data } = await axios.get<IUser>('/auth');
+      if (data?.role === 'ADMIN' || data?.role === 'STADION_OWNER') {
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('user', JSON.stringify(data));
+        return data;
+      }
+      return thunkAPI.rejectWithValue('');
+    } catch (error) {
+      return thunkAPI.rejectWithValue('');
     }
-    return thunkAPI.rejectWithValue('');
-  },
+  }
 );
 
 interface IInitialState {
@@ -137,7 +146,14 @@ interface IInitialState {
 
 const getUserFromLocalStorage = (): IUser | null => {
   const userStr = localStorage.getItem('user');
-  return userStr ? JSON.parse(userStr) : null;
+  if (userStr) {
+    try {
+      return JSON.parse(userStr);
+    } catch (error) {
+      console.error('Failed to parse user data from local storage:', error);
+    }
+  }
+  return null;
 };
 
 const initialState: IInitialState = {
@@ -166,7 +182,7 @@ const authSlice = createSlice({
       state.user = null;
       state.isInvalid = true;
       state.status = STATUS.ERROR;
-      localStorage.removeItem('user');
+      localStorage.removeItem('user'); 
     });
     builder.addCase(fetchLogin.pending, (state) => {
       state.user = null;
