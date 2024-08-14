@@ -14,7 +14,7 @@ const App: FC = () => {
     if (localStorage.getItem('accessToken')) {
       dispatch(fetchAuthMe());
     }
-  }, [dispatch]);
+  }, []);
 
   const { user, status } = useSelector(selectAuth);
 
