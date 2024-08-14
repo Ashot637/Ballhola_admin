@@ -16,7 +16,8 @@
 
 
 .notification{
-  background-image: url('../../images/Notification.svg');
+  background-color: #2A88E9;
+  mask: url('../../images/Notification.svg') no-repeat center / contain;
   height: 30px;
   width: 26px;
   margin-left: 10px;

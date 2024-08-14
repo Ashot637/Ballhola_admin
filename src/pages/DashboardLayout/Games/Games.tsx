@@ -75,7 +75,7 @@ const Games = () => {
     startTime: formatDate(game.startTime),
     endTime: formatDate(game.endTime),
     playersCount: game.playersCount + '/' + game.maxPlayersCount,
-    stadiumId: game.stadion.id,
+    stadionId: game.stadion.id,
     available: dayjs(game.startTime).isAfter(dayjs()) ? '🟢' : '🔴',
   }))
   .sort((a, b) => (a.available === '🟢' && b.available !== '🟢' ? -1 : 1));

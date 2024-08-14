@@ -1,14 +1,16 @@
 .container{
     border-radius: 32px;
-    background-color: #2F4131;
+    background-color: #032176;
     width: 100%;
     height: auto;
     margin-top: 20px;
     padding: 40px 20px;
 }
 
+
 .bell{
-    background-image: url('../../../images/Notification.svg');
+    background-color: #2A88E9; 
+    mask: url('../../../images/Notification.svg') no-repeat center;
     width: 26px;
     height: 30px;
     scale: 0.91;

@@ -43,8 +43,8 @@ const Notifications = () => {
             <div
               style={
                 el.isNew == false
-                  ? { backgroundColor: "#202C22" }
-                  : { backgroundColor: "#556326" }
+                  ? { backgroundColor: "#031852" }
+                  : { backgroundColor: "#2A88E9" }
               }
               className={styles.border}
             >
@@ -52,15 +52,15 @@ const Notifications = () => {
             </div>
             <div className={styles.texts}>
               <p>
-              <span style={{ color: "#D1E231", textDecoration: "underline" }}>
+              <span style={{ color: "#4b65af", textDecoration: "underline" }}>
                   {el.user.name}
                 </span>
                {' '} has booked a ticket on {' '}
-                <span style={{ color: "#D1E231", textDecoration: "underline" }}>
+                <span style={{ color: "#4b65af", textDecoration: "underline" }}>
                   {formatter.format(new Date(el.game.startTime))}
                 </span>
                 {" at"}{" "}
-                <span style={{ color: "#D1E231", textDecoration: "underline" }}>
+                <span style={{ color: "#4b65af", textDecoration: "underline" }}>
                   {el.stadion.title_en}
                 </span>
               </p>
