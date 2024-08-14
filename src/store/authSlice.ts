@@ -91,6 +91,10 @@
 // export const { logout } = authSlice.actions;
 
 
+
+
+
+
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from '../axios/axios';
 
@@ -145,6 +149,7 @@ interface IInitialState {
 
 const getUserFromLocalStorage = (): IUser | null => {
   const userStr = localStorage.getItem('user');
+  console.log('Retrieved user from localStorage:', userStr); 
   if (userStr) {
     try {
       return JSON.parse(userStr);
@@ -156,7 +161,7 @@ const getUserFromLocalStorage = (): IUser | null => {
 };
 
 const initialState: IInitialState = {
-  user: getUserFromLocalStorage(),
+  user: getUserFromLocalStorage(), 
   status: STATUS.WAITING,
   isInvalid: false,
 };
@@ -166,6 +171,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
+      console.log('Logging out...'); 
       localStorage.removeItem('accessToken');
       localStorage.removeItem('user');
       state.user = null;
