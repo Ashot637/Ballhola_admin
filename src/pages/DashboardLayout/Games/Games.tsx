@@ -67,7 +67,7 @@ const Games = () => {
   //   available: dayjs(game.startTime).isAfter(dayjs()) ? '🟢' : '🔴',
   // }));
 
-  const rows: GridRowsProp = data
+  const rows: GridRowsProp = data.reverse()
   .map((game: IGame) => ({
     id: game.id,
     price: game.price,
