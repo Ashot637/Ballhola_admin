@@ -71,7 +71,7 @@ const Games = () => {
   .map((game: IGame) => ({
     id: game.id,
     price: game.price,
-    stadiumName: game.stadion.title_en,
+    stadionName: game.stadion.title_en,
     startTime: formatDate(game.startTime),
     endTime: formatDate(game.endTime),
     playersCount: game.playersCount + '/' + game.maxPlayersCount,

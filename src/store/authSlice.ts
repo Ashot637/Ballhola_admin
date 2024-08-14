@@ -92,9 +92,6 @@ export const { logout } = authSlice.actions;
 
 
 
-
-
-
 // import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import axios from '../axios/axios';
 
@@ -161,7 +158,7 @@ export const { logout } = authSlice.actions;
 // };
 
 // const initialState: IInitialState = {
-//   user: getUserFromLocalStorage(), 
+//   user: getUserFromLocalStorage(), // Initialize user from local storage
 //   status: STATUS.WAITING,
 //   isInvalid: false,
 // };
