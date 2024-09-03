@@ -33,7 +33,10 @@ const NewGame: FC = () => {
 
   const [selectedStaion, setSelectedStaion] = useState<string>("");
   const [maxPlayersCount, setMaxPlayersCount] = useState<number>(22);
-  const [price, setPrice] = useState<number>(3000);
+  // const [price1Hour, setPrice1Hour] = useState<number | null>(3000);
+  // const [price1_5Hour, setPrice1_5Hour] = useState<number | null>(null);
+  const [priceOneHour, setPriceOneHour] = useState<number | null>(3000);
+  const [priceOneHourAndHalf, setpriceOneHourAndHalf] = useState<number | null>(null);
   const [startTime, setStartTime] = useState<Date | null | Dayjs>(null);
   const [endTime, setEndTime] = useState<Date | null | Dayjs>(null);
   const [players, setPlayers] = useState<IUser[]>([]);
@@ -52,7 +55,8 @@ const NewGame: FC = () => {
         setStartTime(dayjs(data.startTime));
         setEndTime(dayjs(data.endTime));
         setSelectedStaion(data.stadion.title_en);
-        setPrice(data.price);
+        setPriceOneHour(data.priceOneHour);
+        setpriceOneHourAndHalf(data.priceOneHourAndHalf);
         setPlayers(data.users);
       });
     }
@@ -61,6 +65,27 @@ const NewGame: FC = () => {
   if (!stadions || (id && !selectedStaion)) {
     return <Spinner />;
   }
+
+  const handlePrice1HourChange = (value: string) => {
+    const numValue = Number(value);
+    if (!isNaN(numValue) && numValue > 0) {
+      setPriceOneHour(numValue);
+      setpriceOneHourAndHalf(null);
+    } else {
+      setPriceOneHour(null);
+    }
+  };
+  
+  const handlePrice1_5HourChange = (value: string) => {
+    const numValue = Number(value);
+    if (!isNaN(numValue) && numValue > 0) {
+      setpriceOneHourAndHalf(numValue);
+      setPriceOneHour(null);
+    } else {
+      setpriceOneHourAndHalf(null);
+    }
+  };
+  
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -72,9 +97,13 @@ const NewGame: FC = () => {
       endTime,
       maxPlayersCount,
       stadionId,
-      price,
-      range : 1
+      priceOneHour,
+      priceOneHourAndHalf,
+      filledPriceField: priceOneHour !== null ? "price1Hour" : "price1_5Hour",
+      range: 1
     };
+
+    console.log(data)
     if (!id) {
       await axios.post("/game/create", data);
     } else {
@@ -99,12 +128,37 @@ const NewGame: FC = () => {
             type="number"
             label="Maximum players count"
           />
+          <div className={classes.container}>
           <Input
-            value={String(price)}
-            onChange={(value) => setPrice(Number(value))}
-            type="number"
-            label="Price"
-          />
+              value={String(priceOneHour ?? '')}
+              onChange={(value) => {
+                if (value) {
+                  setPriceOneHour(Number(value));
+                  setpriceOneHourAndHalf(null);
+                } else {
+                  setPriceOneHour(null); 
+                }
+              }}
+              type="number"
+              label="Price for 1 hour"
+              disabled={priceOneHourAndHalf !== null && priceOneHourAndHalf !== undefined}
+            />
+            <Input
+              value={String(priceOneHourAndHalf ?? '')}
+              onChange={(value) => {
+                if (value) {
+                  setpriceOneHourAndHalf(Number(value));
+                  setPriceOneHour(null); 
+                } else {
+                  setpriceOneHourAndHalf(null); 
+                }
+              }}
+              type="number"
+              label="Price for 1.5 hour"
+              disabled={priceOneHour !== null && priceOneHour !== undefined}
+            />
+          </div>
+          
            <label className={classes.label}>Stadium</label>
           {!selectedStaion && !id ? (
             <label className={classes.label}>Empty Stadiums</label>
@@ -141,15 +195,7 @@ const NewGame: FC = () => {
                 '& .Mui-focused .MuiInputBase-input::placeholder': {
                   color: 'rgba(254, 254, 254, 0.816)',
                 },
-                // '& .MuiInput-underline:before': {
-                //   borderBottom: '1px solid white',
-                // },
-                // '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
-                // },
-                // '& .MuiInput-underline:after': {
-                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
-                // },
+        
               }}
             
             />
@@ -171,15 +217,7 @@ const NewGame: FC = () => {
                 '& .Mui-focused .MuiInputBase-input::placeholder': {
                   color: 'rgba(254, 254, 254, 0.816)',
                 },
-                // '& .MuiInput-underline:before': {
-                //   borderBottom: '1px solid white',
-                // },
-                // '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
-                // },
-                // '& .MuiInput-underline:after': {
-                //   borderBottom: '2px solid rgba(254, 254, 254, 0.816)',
-                // },
+                
               }}
             />
           </LocalizationProvider>
@@ -189,7 +227,7 @@ const NewGame: FC = () => {
               !endTime ||
               !maxPlayersCount ||
               !selectedStaion ||
-              !price
+              (priceOneHour === null && priceOneHourAndHalf === null)
             }
             className={classes.btn}
             value={id ? "Edit" : "Create"}

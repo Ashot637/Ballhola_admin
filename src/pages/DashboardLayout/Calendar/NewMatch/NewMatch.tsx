@@ -8,7 +8,11 @@ const NewMatch = ({ onCancel }: { onCancel: () => void }) => {
   const [start_time, setStart_time] = useState<string>("");
   const [end_time, setEnd_time] = useState<string>("");
   const [players, setPlayers] = useState<string>("");
-  const [price, setPrice] = useState<string>("");
+  // const [price, setPrice] = useState<string>("");
+  // const [price1Hour, setPrice1Hour] = useState<string>("");
+  // const [price1_5Hour, setPrice1_5Hour] = useState<string>("");
+  const [priceOneHour, setPriceOneHour] = useState<string>("");
+  const [priceOneHourAndHalf, setpriceOneHourAndHalf] = useState<string>("");
 
   return (
     <>
@@ -51,13 +55,31 @@ const NewMatch = ({ onCancel }: { onCancel: () => void }) => {
             onChange={setPlayers}
             placeholder="Max players for this match"
           />
+          <div className={styles.container}>
           <Input
             className={styles.inputs}
-            label="Price per person"
-            value={price}
-            onChange={setPrice}
-            placeholder="3000 AMD"
+            label="Price for 1 hour"
+            value={priceOneHour}
+            onChange={(value) => {
+              setPriceOneHour(value);
+              setpriceOneHourAndHalf(""); 
+            }}
+            placeholder=""
+            disabled={priceOneHourAndHalf !== ""}
           />
+            <Input
+            className={styles.inputs}
+            label="Price for 1.5 hours"
+            value={priceOneHourAndHalf}
+            onChange={(value) => {
+              setpriceOneHourAndHalf(value);
+              setPriceOneHour(""); 
+            }}
+            placeholder="4000 AMD"
+            disabled={priceOneHour !== ""}
+          />
+          </div>
+          
           <div className={styles.container}>
             <Button
               className={styles.confirm}

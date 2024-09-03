@@ -29,7 +29,8 @@ const SingleUserGames: FC<ISingleUserGames> = ({ games }) => {
 
   const rows: GridRowsProp = games.map((game) => ({
     id: game.id,
-    price: game.price,
+    // price: game.priceOneHour,
+    price: game.priceOneHour ?? game.priceOneHourAndHalf,
     stadionName: game.stadion.title_en,
     startTime: formatDate(game.startTime),
     endTime: formatDate(game.endTime),

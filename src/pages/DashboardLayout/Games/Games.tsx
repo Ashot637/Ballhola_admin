@@ -70,7 +70,8 @@ const Games = () => {
   const rows: GridRowsProp = data.reverse()
   .map((game: IGame) => ({
     id: game.id,
-    price: game.price,
+    // price: game.priceOneHour,
+    price: game.priceOneHour ?? game.priceOneHourAndHalf,
     stadionName: game.stadion.title_en,
     startTime: formatDate(game.startTime),
     endTime: formatDate(game.endTime),

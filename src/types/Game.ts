@@ -3,7 +3,8 @@ import { type IGuest, type IUser } from './User';
 
 export interface IGame {
   id: number;
-  price: number;
+  priceOneHour: number;
+  priceOneHourAndHalf: number;
   startTime: string;
   endTime: string;
   playersCount: number;

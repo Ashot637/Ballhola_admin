@@ -24,3 +24,11 @@
 .label {
   color: var(--color-text-primary);
 }
+
+
+.container{
+  display: flex;
+  gap:20px;
+  width: 100%;
+  justify-content: center;
+}
