@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import "./footer.css";
-import Logo from "../../images/Logo.svg";
+// import Logo from "../../images/Logo.svg";
+import BollHolaLogo from '../../images/BollHola_logo.png';
+
 
 
 function Footer({ refs }) {
@@ -17,7 +19,7 @@ function Footer({ refs }) {
             <li>
               <img
                 className="footer__logo"
-                src={Logo}
+                src={BollHolaLogo}
                 alt="logo"
                 onClick={() => scrollToSection(refs.heroRef)}
                 height={31}

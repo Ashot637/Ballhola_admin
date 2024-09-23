@@ -3,7 +3,9 @@ import {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import LngSwitcher from '../LngSwitcher/LngSwitcher';
-import Logo from '../../images/Logo.svg'
+// import Logo from '../../images/Logo.svg'
+import BollHolaLogo from '../../images/BollHola_logo.png';
+
 import './header.css'
 
 function Header({refs}) {
@@ -18,7 +20,8 @@ function Header({refs}) {
 
    return (<>
      <header className='header container'>
-         <img className='header__logo' src={Logo} alt='logo'/>
+         <img className='header__logo' src={BollHolaLogo} alt='logo'/>
+
          <nav>
             <ul className='header__menu'>
                <li>

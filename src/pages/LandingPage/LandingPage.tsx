@@ -45,9 +45,9 @@ export default function LandingPage() {
          {/* <div ref={reviewsRef}>
             <CustomSlider />
          </div> */}
-         <div ref={demoRef }>
+         {/* <div ref={demoRef }>
             <SwiperSlider />
-         </div>
+         </div> */}
          <div ref={downloadRef}>
             <Banner />
          </div>
