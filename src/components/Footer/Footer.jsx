@@ -1,7 +1,9 @@
 import { useTranslation } from "react-i18next";
 import "./footer.css";
 // import Logo from "../../images/Logo.svg";
-import BollHolaLogo from '../../images/BollHola_logo.png';
+// import BollHolaLogo from '../../images/BollHola_logo.png';
+import BollHolaLogo from '../../images/ballhola_green_x1024-01.png';
+
 
 
 

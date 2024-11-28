@@ -4,7 +4,9 @@ import {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import LngSwitcher from '../LngSwitcher/LngSwitcher';
 // import Logo from '../../images/Logo.svg'
-import BollHolaLogo from '../../images/BollHola_logo.png';
+// import BollHolaLogo from '../../images/BollHola_logo.png';
+import BollHolaLogo from '../../images/ballhola_green_x1024-01.png';
+
 
 import './header.css'
 

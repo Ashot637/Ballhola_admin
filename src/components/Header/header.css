@@ -101,8 +101,10 @@
 
 .header__logo {
     position: relative;
-    width: 49px;
-    height: 46px;
+    /* width: 49px;
+    height: 46px; */
+    width: 160px;
+    height: 160px;
     left: 19px;
 }
 
@@ -168,8 +170,10 @@
     }
 
     .header__logo {
-        width: 51px;
-        height: 46.88px;
+        /* width: 51px;
+        height: 46.88px; */
+        width: 250px;
+        height: 250px;
         /*top: 20.29px;*/
         left:0;
     }
@@ -180,6 +184,11 @@
 @media (min-width: 768px) {
     .header__menu {
         gap: 35px;
+    }
+    .header__logo {
+        width: 250px;
+        height: 250px;
+       
     }
 }
 
@@ -205,8 +214,8 @@
     }
 
     .header__logo {
-        width: 90px;
-        height: 84.39px;
+        width: 300px;
+        height: 300px;
         /*top: 29.15px;*/
         /*left: 100px;*/
     }
